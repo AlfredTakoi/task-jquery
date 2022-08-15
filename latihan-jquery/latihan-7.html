@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./../assets/css/bootstrap.min.css" />
+    <script src="./../assets/js/jquery.js"></script>
+    <title>Latihan 7 JQuery</title>
+  </head>
+  <body>
+    <div class="container mt-5">
+      <h1>Latihan 7</h1>
+      <p>Biodata Alfred</p>
+      <table class="table table-bordered">
+        <tr></tr>
+      </table>
+    </div>
+    <script>
+      $(document).ready(function () {
+        var biodata = {
+          nama: "Alfred",
+          kelas: "XII",
+          jurusan: "Rekayasa Perangkat Lunak",
+          alamat: "Cimahi",
+        };
+
+        $("table").append(
+          "<tr><td>nama</td><td>" + biodata.nama + "</td></tr>",
+          "<tr><td>kelas</td><td>" + biodata.kelas + "</td></tr>",
+          "<tr><td>jurusan</td><td>" + biodata.jurusan + "</td></tr>",
+          "<tr><td>alamat</td><td>" + biodata.alamat + "</td></tr>"
+        );
+      });
+    </script>
+  </body>
+</html>

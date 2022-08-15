@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./../assets/css/bootstrap.min.css" />
+    <script src="./../assets/js/jquery.js"></script>
+    <title>Latihan 2 Jquery</title>
+  </head>
+  <body>
+    <div class="container mt-5">
+      <h1>Latihan 2</h1>
+      <form action="" class="row" id="form">
+        <div class="col-md-6">
+          <label for="nilai-beli" class="form-label">Nilai beli</label>
+          <input type="number" class="form-control" id="nilai-beli" />
+        </div>
+        <div class="col-md-6 mb-3">
+          <label for="uang-pelanggan" class="form-label">Uang Pelanggan</label>
+          <input type="number" class="form-control" id="uang-pelanggan" />
+        </div>
+        <div class="col-md-12">
+          <button class="btn btn-primary" type="submit">Submit</button>
+        </div>
+      </form>
+    </div>
+    <script>
+      var nilaiBeli;
+      var uangPelanggan;
+
+      $(document).ready(function () {
+        $("#form").submit(function (event) {
+          event.preventDefault();
+
+          nilaiBeli = $("#nilai-beli").val();
+          uangPelanggan = $("#uang-pelanggan").val();
+
+          if (parseInt(uangPelanggan) < parseInt(nilaiBeli)) {
+            alert("Maaf uang anda kurang");
+          } else if (parseInt(uangPelanggan) > parseInt(nilaiBeli)) {
+            var result = uangPelanggan - nilaiBeli;
+            if (parseInt(nilaiBeli) > 400000) {
+              var diskon = parseInt(nilaiBeli) * 0.07;
+              hargaDiskon = parseInt(nilaiBeli) - diskon;
+              alert(
+                "anda mendapatkan diskon sebesar 7% menjadi Rp " + hargaDiskon
+              );
+              alert("uang kembalian anda Rp " + result);
+            } else if (
+              parseInt(nilaiBeli) > 200000 ||
+              parseInt(nilaiBeli) <= 400000
+            ) {
+              var diskon = parseInt(nilaiBeli) / 20;
+              hargaDiskon = parseInt(nilaiBeli) - diskon;
+              alert(
+                "anda mendapatkan diskon sebesar 5% menjadi Rp " + hargaDiskon
+              );
+              alert("uang kembalian anda Rp " + result);
+            }
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

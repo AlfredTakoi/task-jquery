@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./../assets/css/bootstrap.min.css" />
+    <script src="./../assets/js/jquery.js"></script>
+    <title>Latihan 5 JQuery</title>
+  </head>
+  <body>
+    <div class="container mt-5">
+      <h1>Latihan 5</h1>
+      <p>Daftar Judul Film</p>
+      <ul></ul>
+      <div class="d-flex">
+        <input type="text" class="form-control w-25" id="judul-film-input" />
+        <button class="btn btn-primary ms-2" id="add">Add</button>
+        <button class="btn btn-danger ms-2" id="remove">Remove</button>
+        <button class="btn btn-warning ms-2" id="update">Update</button>
+      </div>
+    </div>
+    <script>
+      $(document).ready(function () {
+        var judulFilm = [
+          "Pengabdi Setan 2",
+          "Cek Toko Sebelah",
+          "Avangers EndGame",
+          "Spiderman Homecoming",
+          "Rumput Tetangga",
+        ];
+
+        let judulFilmInput;
+
+        $.each(judulFilm, function (index, value) {
+          $("ul").append($("<li>" + value + "</li>"));
+        });
+
+        $("#add").click(function () {
+          judulFilmInput = $("#judul-film-input").val();
+          $("ul").append("<li>" + judulFilmInput + "</li>");
+        });
+
+        $("#remove").click(function () {
+          $("li").first().remove();
+        });
+
+        $("#update").click(function () {
+          judulFilmInput = $("#judul-film-input").val();
+          $("li:nth-child(3)").remove();
+          $("li:nth-child(2)").append("<li>" + judulFilmInput + "</li>");
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Latihan JQuery</title>
+    <style>
+      #box1 {
+        background-color: yellow;
+        color: red;
+        width: 100px;
+        height: 100px;
+      }
+    </style>
+
+    <script src="./../js/jquery.js"></script>
+  </head>
+  <body>
+    <h1>Latihan JQuery</h1>
+    <div id="box1">Box 1</div>
+    <br />
+
+    <!-- <button id="btn1">Show</button>
+    <button id="btn2">Hide</button>
+    <button id="btn3">Toggle</button>
+    <button id="btn4">Stop</button> -->
+
+    <script>
+      $(document).ready(function () {
+        // No Animations
+        // $("#btn1").click(function () {
+        //   $("#box1").show();
+        // });
+        // $("#btn2").click(function () {
+        //   $("#box1").hide();
+        // });
+        // $("#btn3").click(function () {
+        //   $("#box1").toggle();
+        // });
+        // Animation
+        // $("#btn1").click(function () {
+        //   $("#box1").slideDown(function(){
+        //     alert("selesai!")
+        //   });
+        // });
+        // $("#btn2").click(function () {
+        //   $("#box1").slideUp();
+        // });
+        // $("#btn3").click(function () {
+        //   $("#box1").slideToggle();
+        // });
+        // $("#btn4").click(function () {
+        //   $("#box1").stop();
+        // });
+      });
+
+      let i = 1
+      while(i <= 10 ) {
+        document.write(
+          "saya tidak akan mengulangi lagi kesalahan yang sama" + "</br>"
+        );
+        i++
+      }
+    </script>
+  </body>
+</html>

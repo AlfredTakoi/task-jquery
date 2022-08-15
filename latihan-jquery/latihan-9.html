@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./../assets/css/bootstrap.min.css" />
+    <script src="./../assets/js/jquery.js"></script>
+    <title>Latihan 9 JQuery</title>
+  </head>
+  <body>
+    <div class="container mt-5">
+      <h1>Latihan 9</h1>
+      <p>Daftar Belanjaan</p>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Nama Barang</th>
+            <th>Harga Barang</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+
+      <p id="totalBelanja"></p>
+    </div>
+    <script>
+      $(document).ready(function () {
+        const rupiah = (number) => {
+          return new Intl.NumberFormat("id-ID", {
+            style: "currency",
+            currency: "IDR",
+          }).format(number);
+        };
+
+        var daftarBelanjaan = [
+          {
+            namaBarang: "Kemeja Keren",
+            hargaBarang: 140000,
+          },
+          {
+            namaBarang: "Sepatu Adidas",
+            hargaBarang: 150000,
+          },
+          {
+            namaBarang: "Lemari",
+            hargaBarang: 500000,
+          },
+          {
+            namaBarang: "TV Led",
+            hargaBarang: 1400000,
+          },
+          {
+            namaBarang: "Kasur",
+            hargaBarang: 900000,
+          },
+          {
+            namaBarang: "Kursi",
+            hargaBarang: 250000,
+          },
+          {
+            namaBarang: "Meja",
+            hargaBarang: 300000,
+          },
+        ];
+
+        for (let index = 0; index < daftarBelanjaan.length; index++) {
+          const element = daftarBelanjaan[index];
+          $("table").append(
+            "<tr><td>" +
+              element.namaBarang +
+              "</td><td>" +
+              rupiah(element.hargaBarang) +
+              "</td></tr>"
+          );
+        }
+
+        const sum = daftarBelanjaan.reduce((accumulator, object) => {
+          return accumulator + object.hargaBarang;
+        }, 0);
+
+        $("#totalBelanja").append("Total Belanja Rp " + rupiah(sum));
+      });
+    </script>
+  </body>
+</html>

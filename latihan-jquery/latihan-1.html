@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Latihan 1 Jquery</title>
+    <link rel="stylesheet" href="./../assets/css/bootstrap.min.css" />
+    <script src="./../assets/js/jquery.js"></script>
+  </head>
+  <body>
+    <div class="container mt-5">
+      <h1>Latihan 1</h1>
+      <h4>Operasi Aritmatika</h4>
+      <div class="row">
+        <!-- Tambah -->
+        <div class="col-md-6">
+          <label for="angkat-1" class="form-label">Angka 1</label>
+          <input
+            type="number"
+            id="angka-1"
+            placeholder="Masukkan Angka 1"
+            class="form-control"
+          />
+        </div>
+        <div class="col-md-6 mb-2">
+          <label for="angkat-2" class="form-label">Angka 2</label>
+          <input
+            type="number"
+            id="angka-2"
+            placeholder="Masukkan Angka 2"
+            class="form-control"
+          />
+        </div>
+        <div class="col-md-12 mb-2 d-flex align-items-center">
+          <button class="btn btn-primary" id="tambah">+</button>
+          <p class="m-0 w-100 ms-3" id="result-tambah"></p>
+        </div>
+        <hr />
+
+        <!-- Kurang -->
+        <div class="col-md-6">
+          <label for="angkat-3" class="form-label">Angka 3</label>
+          <input
+            type="number"
+            id="angka-3"
+            placeholder="Masukkan Angka 3"
+            class="form-control"
+          />
+        </div>
+        <div class="col-md-6 mb-2">
+          <label for="angka-4" class="form-label">Angka 4</label>
+          <input
+            type="number"
+            id="angka-4"
+            placeholder="Masukkan Angka 4"
+            class="form-control"
+          />
+        </div>
+        <div class="col-md-12 mb-2 d-flex align-items-center">
+          <button class="btn btn-danger" id="kurang">-</button>
+          <p class="m-0 w-100 ms-3" id="result-kurang"></p>
+        </div>
+        <hr />
+
+        <!-- Bagi -->
+        <div class="col-md-6">
+          <label for="angkat-4" class="form-label">Angka 4</label>
+          <input
+            type="number"
+            id="angka-4-bagi"
+            placeholder="Masukkan Angka 4"
+            class="form-control"
+          />
+        </div>
+        <div class="col-md-6 mb-2">
+          <label for="angkat-5" class="form-label">Angka 5</label>
+          <input
+            type="number"
+            id="angka-5"
+            placeholder="Masukkan Angka 5"
+            class="form-control"
+          />
+        </div>
+        <div class="col-md-12 mb-2 d-flex align-items-center">
+          <button class="btn btn-info" id="bagi">/</button>
+          <p class="m-0 w-100 ms-3" id="result-bagi"></p>
+        </div>
+        <hr />
+
+        <!-- Kali -->
+        <div class="col-md-6">
+          <label for="angkat-1" class="form-label">Angka 1</label>
+          <input
+            type="number"
+            id="angka-1-kali"
+            placeholder="Masukkan Angka 1"
+            class="form-control"
+          />
+        </div>
+        <div class="col-md-6 mb-2">
+          <label for="angkat-3" class="form-label">Angka 3</label>
+          <input
+            type="number"
+            id="angka-3-kali"
+            placeholder="Masukkan Angka 3"
+            class="form-control"
+          />
+        </div>
+        <div class="col-md-12 mb-2 d-flex align-items-center">
+          <button class="btn btn-warning" id="kali">X</button>
+          <p class="m-0 w-100 ms-3" id="result-kali"></p>
+        </div>
+        <hr />
+
+        <!-- Pangkat -->
+        <div class="col-md-6">
+          <label for="angkat-2" class="form-label">Angka 2</label>
+          <input
+            type="number"
+            id="angka-2-pangkat"
+            placeholder="Masukkan Angka 2"
+            class="form-control"
+          />
+        </div>
+        <div class="col-md-6 mb-2">
+          <label for="angkat-4" class="form-label">Angka 4</label>
+          <input
+            type="number"
+            id="angka-4-pangkat"
+            placeholder="Masukkan Angka 4"
+            class="form-control"
+          />
+        </div>
+        <div class="col-md-12 mb-2 d-flex align-items-center">
+          <button class="btn btn-dark" id="pangkat">Pangkat</button>
+          <p class="m-0 w-100 ms-3" id="result-pangkat"></p>
+        </div>
+        <hr />
+      </div>
+    </div>
+
+    <script>
+      $(document).ready(function () {
+        var angka1;
+        var angka2;
+        var angka3;
+        var angka4;
+        var angka5;
+
+        $("#tambah").click(function () {
+          angka1 = $("#angka-1").val();
+          angka2 = $("#angka-2").val();
+          var result = parseInt(angka1) + parseInt(angka2);
+          $("#result-tambah").text(`${angka1} + ${angka2} = ${result}`);
+        });
+        $("#kurang").click(function () {
+          angka3 = $("#angka-3").val();
+          angka4 = $("#angka-4").val();
+          var result = parseInt(angka3) - parseInt(angka4);
+          $("#result-kurang").text(`${angka3} - ${angka4} = ${result}`);
+        });
+        $("#bagi").click(function () {
+          angka4 = $("#angka-4-bagi").val();
+          angka5 = $("#angka-5").val();
+          var result = parseInt(angka4) / parseInt(angka5);
+          $("#result-bagi").text(`${angka4} / ${angka5} = ${result}`);
+        });
+        $("#kali").click(function () {
+          angka1 = $("#angka-1-kali").val();
+          angka3 = $("#angka-3-kali").val();
+          var result = parseInt(angka1) * parseInt(angka3);
+          $("#result-kali").text(`${angka1} x ${angka3} = ${result}`);
+        });
+        $("#pangkat").click(function () {
+          angka2 = $("#angka-2-pangkat").val();
+          angka4 = $("#angka-4-pangkat").val();
+          console.log(angka2)
+          var result = parseInt(angka2) ** parseInt(angka4);
+          $("#result-pangkat").text(`${angka2} pangkat ${angka4} = ${result}`);
+        });
+      });
+    </script>
+  </body>
+</html>

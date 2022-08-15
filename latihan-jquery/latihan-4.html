@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./../assets/css/bootstrap.min.css" />
+    <script src="./../assets/js/jquery.js"></script>
+    <title>Latihan 4 JQuery</title>
+  </head>
+  <body>
+    <div class="container mt-5">
+      <h1>Latihan 4</h1>
+      <p>Operasi Aritmatika menggunakan Array</p>
+      <p id="jumlah"></p>
+      <p id="kurang"></p>
+      <p id="bagi"></p>
+      <p id="kali"></p>
+    </div>
+    <script>
+      $(document).ready(function () {
+        var arrayCount = [1, 3, 54, 8, 9, 10];
+
+        var resultJumlah = arrayCount[0] + arrayCount[1];
+        $('#jumlah').append(`${arrayCount[0]} + ${arrayCount[1]} = `, resultJumlah)
+
+        var resultKurang = arrayCount[2] - arrayCount[3];
+        $('#kurang').append(`${arrayCount[2]} - ${arrayCount[3]} = `, resultKurang)
+
+        var resultBagi = arrayCount[3] / arrayCount[4];
+        $('#bagi').append(`${arrayCount[3]} / ${arrayCount[4]} = `, resultBagi)
+
+        var resultKali = arrayCount[4] * arrayCount[5];
+        $('#kali').append(`${arrayCount[4]} x ${arrayCount[5]} = `, resultKali)
+      });
+    </script>
+  </body>
+</html>
