@@ -33,7 +33,9 @@
           />
         </div>
         <div class="col-md-12 mb-2 d-flex align-items-center">
-          <button class="btn btn-primary" id="tambah">+</button>
+          <button class="btn btn-primary" id="tambah" onclick="tambah()">
+            +
+          </button>
           <p class="m-0 w-100 ms-3" id="result-tambah"></p>
         </div>
         <hr />
@@ -58,7 +60,7 @@
           />
         </div>
         <div class="col-md-12 mb-2 d-flex align-items-center">
-          <button class="btn btn-danger" id="kurang">-</button>
+          <button class="btn btn-danger" id="kurang" onclick="kurang()">-</button>
           <p class="m-0 w-100 ms-3" id="result-kurang"></p>
         </div>
         <hr />
@@ -83,7 +85,7 @@
           />
         </div>
         <div class="col-md-12 mb-2 d-flex align-items-center">
-          <button class="btn btn-info" id="bagi">/</button>
+          <button class="btn btn-info" id="bagi" onclick="bagi()">/</button>
           <p class="m-0 w-100 ms-3" id="result-bagi"></p>
         </div>
         <hr />
@@ -108,7 +110,7 @@
           />
         </div>
         <div class="col-md-12 mb-2 d-flex align-items-center">
-          <button class="btn btn-warning" id="kali">X</button>
+          <button class="btn btn-warning" id="kali" onclick="kali()">X</button>
           <p class="m-0 w-100 ms-3" id="result-kali"></p>
         </div>
         <hr />
@@ -133,7 +135,7 @@
           />
         </div>
         <div class="col-md-12 mb-2 d-flex align-items-center">
-          <button class="btn btn-dark" id="pangkat">Pangkat</button>
+          <button class="btn btn-dark" id="pangkat" onclick="pangkat()">Pangkat</button>
           <p class="m-0 w-100 ms-3" id="result-pangkat"></p>
         </div>
         <hr />
@@ -141,45 +143,44 @@
     </div>
 
     <script>
-      $(document).ready(function () {
-        var angka1;
-        var angka2;
-        var angka3;
-        var angka4;
-        var angka5;
+      var angka1;
+      var angka2;
+      var angka3;
+      var angka4;
+      var angka5;
+      var result;
 
-        $("#tambah").click(function () {
-          angka1 = $("#angka-1").val();
-          angka2 = $("#angka-2").val();
-          var result = parseInt(angka1) + parseInt(angka2);
-          $("#result-tambah").text(`${angka1} + ${angka2} = ${result}`);
-        });
-        $("#kurang").click(function () {
-          angka3 = $("#angka-3").val();
-          angka4 = $("#angka-4").val();
-          var result = parseInt(angka3) - parseInt(angka4);
-          $("#result-kurang").text(`${angka3} - ${angka4} = ${result}`);
-        });
-        $("#bagi").click(function () {
-          angka4 = $("#angka-4-bagi").val();
-          angka5 = $("#angka-5").val();
-          var result = parseInt(angka4) / parseInt(angka5);
-          $("#result-bagi").text(`${angka4} / ${angka5} = ${result}`);
-        });
-        $("#kali").click(function () {
-          angka1 = $("#angka-1-kali").val();
-          angka3 = $("#angka-3-kali").val();
-          var result = parseInt(angka1) * parseInt(angka3);
-          $("#result-kali").text(`${angka1} x ${angka3} = ${result}`);
-        });
-        $("#pangkat").click(function () {
-          angka2 = $("#angka-2-pangkat").val();
-          angka4 = $("#angka-4-pangkat").val();
-          console.log(angka2)
-          var result = parseInt(angka2) ** parseInt(angka4);
-          $("#result-pangkat").text(`${angka2} pangkat ${angka4} = ${result}`);
-        });
-      });
+
+      function tambah() {
+        angka1 = document.getElementById("angka-1").value;
+        angka2 = document.getElementById("angka-2").value;
+        result = parseInt(angka1) + parseInt(angka2);
+        document.getElementById("result-tambah").innerHTML = `${angka1} + ${angka2} = ${result}`
+      }
+      function kurang() {
+        angka3 = document.getElementById("angka-3").value;
+        angka4 = document.getElementById("angka-4").value;
+        result = parseInt(angka3) - parseInt(angka4);
+        document.getElementById("result-kurang").innerHTML = `${angka3} - ${angka4} = ${result}`
+      }
+      function bagi() {
+        angka4 = document.getElementById("angka-4-bagi").value;
+        angka5 = document.getElementById("angka-5").value;
+        result = parseInt(angka4) / parseInt(angka5);
+        document.getElementById("result-bagi").innerHTML = `${angka4} / ${angka5} = ${result}`
+      }
+      function kali() {
+        angka1 = document.getElementById("angka-1-kali").value;
+        angka3 = document.getElementById("angka-3-kali").value;
+        result = parseInt(angka1) * parseInt(angka3);
+        document.getElementById("result-kali").innerHTML = `${angka1} x ${angka3} = ${result}`
+      }
+      function pangkat() {
+        angka2 = document.getElementById("angka-2-pangkat").value;
+        angka4 = document.getElementById("angka-4-pangkat").value;
+        result = parseInt(angka2) ** parseInt(angka4);
+        document.getElementById("result-pangkat").innerHTML = `${angka2} pangkat ${angka4} = ${result}`
+      }
     </script>
   </body>
 </html>

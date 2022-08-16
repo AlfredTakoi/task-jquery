@@ -12,24 +12,45 @@
   <body>
     <div class="container mt-5">
       <h1>Latihan 3</h1>
-      <ul></ul>
+      <ul id="list"></ul>
     </div>
     <script>
-      $(document).ready(function () {
-        var country = [
-          "England",
-          "Netherland",
-          "USA",
-          "Indonesia",
-          "Malaysia",
-          "Thailand",
-        ];
+      // $(document).ready(function () {
+      //   var country = [
+      //     "England",
+      //     "Netherland",
+      //     "USA",
+      //     "Indonesia",
+      //     "Malaysia",
+      //     "Thailand",
+      //   ];
 
-        $.each(country, function(index, value){
-            $('ul').append($("<li>" +value + "</li>"))
-            $('li:nth-child(4)').css("color", "red")
-        })
-      });
+      //   $.each(country, function(index, value){
+      //       $('ul').append($("<li>" +value + "</li>"))
+      //       $('li:nth-child(4)').css("color", "red")
+      //   })
+      // });
+
+      var country = [
+        "England",
+        "Netherland",
+        "USA",
+        "Indonesia",
+        "Malaysia",
+        "Thailand",
+      ];
+
+      const list = document.getElementById("list");
+
+      for (let index = 0; index < country.length; index++) {
+        const element = country[index];
+        list.innerHTML += "<li>" + country[index] + "</li>";
+        const countryIndonesia = document.querySelector("#list :nth-child(4)");
+        if (element == "Indonesia") {
+          countryIndonesia.className = "text-danger";
+          console.log(element)
+        }
+      }
     </script>
   </body>
 </html>

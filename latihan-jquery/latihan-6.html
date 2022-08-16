@@ -11,33 +11,18 @@
   <body>
     <div class="container mt-5">
       <h1>Latihan 6</h1>
-      <ul></ul>
+      <ul id="list"></ul>
     </div>
     <script>
-      $(document).ready(function () {
-        var kelasA = [
-            "Alfred",
-            "Aldi",
-            "Andi",
-            "Budi",
-            "Asep",
-            "Rizky"
-        ]
-        var kelasB = [
-            "Kirana",
-            "Putri",
-            "Putra",
-            "Gilang",
-            "Syahbandi",
-            "Anton"
-        ]
+      let list = document.getElementById("list");
+      let kelasA = ["Alfred", "Aldi", "Andi", "Budi", "Asep", "Rizky"];
+      let kelasB = ["Kirana", "Putri", "Putra", "Gilang", "Syahbandi", "Anton"];
 
-        var newKelas = []
-        newKelas.push(...kelasA, ...kelasB)
+      let newKelas = [];
+      newKelas.push(...kelasA, ...kelasB);
 
-        $.each(newKelas.sort(), function (index, value) {
-          $("ul").append($("<li>" + value + "</li>"));
-        });
+      newKelas.forEach((element) => {
+        list.innerHTML += `<li>${element}</li>`
       });
     </script>
   </body>

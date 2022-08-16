@@ -12,7 +12,7 @@
     <div class="container mt-5">
       <h1>Latihan 5</h1>
       <p>Daftar Judul Film</p>
-      <ul></ul>
+      <ul id="list"></ul>
       <div class="d-flex">
         <input type="text" class="form-control w-25" id="judul-film-input" />
         <button class="btn btn-primary ms-2" id="add">Add</button>
@@ -21,36 +21,74 @@
       </div>
     </div>
     <script>
-      $(document).ready(function () {
-        var judulFilm = [
-          "Pengabdi Setan 2",
-          "Cek Toko Sebelah",
-          "Avangers EndGame",
-          "Spiderman Homecoming",
-          "Rumput Tetangga",
-        ];
+      // $(document).ready(function () {
+      //   var judulFilm = [
+      //     "Pengabdi Setan 2",
+      //     "Cek Toko Sebelah",
+      //     "Avangers EndGame",
+      //     "Spiderman Homecoming",
+      //     "Rumput Tetangga",
+      //   ];
 
-        let judulFilmInput;
+      //   let judulFilmInput;
 
-        $.each(judulFilm, function (index, value) {
-          $("ul").append($("<li>" + value + "</li>"));
-        });
+      //   $.each(judulFilm, function (index, value) {
+      //     $("ul").append($("<li>" + value + "</li>"));
+      //   });
 
-        $("#add").click(function () {
-          judulFilmInput = $("#judul-film-input").val();
-          $("ul").append("<li>" + judulFilmInput + "</li>");
-        });
+      //   $("#add").click(function () {
+      //     judulFilmInput = $("#judul-film-input").val();
+      //     $("ul").append("<li>" + judulFilmInput + "</li>");
+      //   });
 
-        $("#remove").click(function () {
-          $("li").first().remove();
-        });
+      //   $("#remove").click(function () {
+      //     $("li").first().remove();
+      //   });
 
-        $("#update").click(function () {
-          judulFilmInput = $("#judul-film-input").val();
-          $("li:nth-child(3)").remove();
-          $("li:nth-child(2)").append("<li>" + judulFilmInput + "</li>");
-        });
+      //   $("#update").click(function () {
+      //     judulFilmInput = $("#judul-film-input").val();
+      //     $("li:nth-child(3)").remove();
+      //     $("li:nth-child(2)").append("<li>" + judulFilmInput + "</li>");
+      //   });
+      // });
+
+      let judulFilm = [
+        "Pengabdi Setan 2",
+        "Cek Toko Sebelah",
+        "Avangers EndGame",
+        "Spiderman Homecoming",
+        "Rumput Tetangga",
+      ];
+
+      let judulFilmInput;
+
+      let list = document.getElementById("list");
+      let add = document.getElementById("add");
+      let remove = document.getElementById("remove");
+
+      judulFilm.forEach((element) => {
+        list.innerHTML += `<li>${element}</li>`;
       });
+
+      add.addEventListener("click", function () {
+        judulFilmInput = document.getElementById("judul-film-input").value;
+        list.innerHTML += `<li>${judulFilmInput}</li>`;
+      });
+
+      remove.addEventListener("click", function () {});
+
+      function sum(name, ...data) {
+        let total = 0;
+        for (const item of data) {
+          total += item;
+        }
+        console.log(`buah ${name} berjumlah ${total}`);
+      }
+
+      sum("jeruk", 2, 3, 5, 6, 8, 3, 2);
+      const array = [2, 3, 5, 6, 8, 3, 2]
+
+      sum("anggur", ...array)
     </script>
   </body>
 </html>

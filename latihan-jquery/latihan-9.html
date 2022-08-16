@@ -12,7 +12,7 @@
     <div class="container mt-5">
       <h1>Latihan 9</h1>
       <p>Daftar Belanjaan</p>
-      <table class="table table-bordered">
+      <table class="table table-bordered" id="table">
         <thead>
           <tr>
             <th>Nama Barang</th>
@@ -22,65 +22,122 @@
         <tbody></tbody>
       </table>
 
-      <p id="totalBelanja"></p>
+      <p id="total-belanja"></p>
     </div>
     <script>
-      $(document).ready(function () {
-        const rupiah = (number) => {
-          return new Intl.NumberFormat("id-ID", {
-            style: "currency",
-            currency: "IDR",
-          }).format(number);
-        };
+      // $(document).ready(function () {
+      //   const rupiah = (number) => {
+      //     return new Intl.NumberFormat("id-ID", {
+      //       style: "currency",
+      //       currency: "IDR",
+      //     }).format(number);
+      //   };
 
-        var daftarBelanjaan = [
-          {
-            namaBarang: "Kemeja Keren",
-            hargaBarang: 140000,
-          },
-          {
-            namaBarang: "Sepatu Adidas",
-            hargaBarang: 150000,
-          },
-          {
-            namaBarang: "Lemari",
-            hargaBarang: 500000,
-          },
-          {
-            namaBarang: "TV Led",
-            hargaBarang: 1400000,
-          },
-          {
-            namaBarang: "Kasur",
-            hargaBarang: 900000,
-          },
-          {
-            namaBarang: "Kursi",
-            hargaBarang: 250000,
-          },
-          {
-            namaBarang: "Meja",
-            hargaBarang: 300000,
-          },
-        ];
+      //   var daftarBelanjaan = [
+      //     {
+      //       namaBarang: "Kemeja Keren",
+      //       hargaBarang: 140000,
+      //     },
+      //     {
+      //       namaBarang: "Sepatu Adidas",
+      //       hargaBarang: 150000,
+      //     },
+      //     {
+      //       namaBarang: "Lemari",
+      //       hargaBarang: 500000,
+      //     },
+      //     {
+      //       namaBarang: "TV Led",
+      //       hargaBarang: 1400000,
+      //     },
+      //     {
+      //       namaBarang: "Kasur",
+      //       hargaBarang: 900000,
+      //     },
+      //     {
+      //       namaBarang: "Kursi",
+      //       hargaBarang: 250000,
+      //     },
+      //     {
+      //       namaBarang: "Meja",
+      //       hargaBarang: 300000,
+      //     },
+      //   ];
 
-        for (let index = 0; index < daftarBelanjaan.length; index++) {
-          const element = daftarBelanjaan[index];
-          $("table").append(
-            "<tr><td>" +
-              element.namaBarang +
-              "</td><td>" +
-              rupiah(element.hargaBarang) +
-              "</td></tr>"
-          );
-        }
+      //   for (let index = 0; index < daftarBelanjaan.length; index++) {
+      //     const element = daftarBelanjaan[index];
+      //     $("table").append(
+      //       "<tr><td>" +
+      //         element.namaBarang +
+      //         "</td><td>" +
+      //         rupiah(element.hargaBarang) +
+      //         "</td></tr>"
+      //     );
+      //   }
 
-        const sum = daftarBelanjaan.reduce((accumulator, object) => {
-          return accumulator + object.hargaBarang;
-        }, 0);
+      //   const sum = daftarBelanjaan.reduce((accumulator, object) => {
+      //     return accumulator + object.hargaBarang;
+      //   }, 0);
 
-        $("#totalBelanja").append("Total Belanja Rp " + rupiah(sum));
-      });
+      //   $("#totalBelanja").append("Total Belanja Rp " + rupiah(sum));
+      // });
+
+      let table = document.getElementById("table");
+      let totalBelanja = document.getElementById("total-belanja");
+
+      const rupiah = (number) => {
+        return new Intl.NumberFormat("id-ID", {
+          style: "currency",
+          currency: "IDR",
+        }).format(number);
+      };
+
+      var daftarBelanjaan = [
+        {
+          namaBarang: "Kemeja Keren",
+          hargaBarang: 140000,
+        },
+        {
+          namaBarang: "Sepatu Adidas",
+          hargaBarang: 150000,
+        },
+        {
+          namaBarang: "Lemari",
+          hargaBarang: 500000,
+        },
+        {
+          namaBarang: "TV Led",
+          hargaBarang: 1400000,
+        },
+        {
+          namaBarang: "Kasur",
+          hargaBarang: 900000,
+        },
+        {
+          namaBarang: "Kursi",
+          hargaBarang: 250000,
+        },
+        {
+          namaBarang: "Meja",
+          hargaBarang: 300000,
+        },
+      ];
+
+      for (let index = 0; index < daftarBelanjaan.length; index++) {
+        const element = daftarBelanjaan[index];
+        table.innerHTML +=
+          "<tr><td>" +
+          element.namaBarang +
+          "</td><td>" +
+          rupiah(element.hargaBarang) +
+          "</td></tr>";
+      }
+
+      const sum = daftarBelanjaan.reduce((accumulator, object) => {
+        return accumulator + object.hargaBarang;
+      }, 0);
+
+      totalBelanja.innerHTML = "Total Belanja Rp " + rupiah(sum);
     </script>
   </body>
 </html>

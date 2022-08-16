@@ -12,26 +12,26 @@
     <div class="container mt-5">
       <h1>Latihan 7</h1>
       <p>Biodata Alfred</p>
-      <table class="table table-bordered">
+      <table class="table table-bordered" id="table">
         <tr></tr>
       </table>
     </div>
     <script>
-      $(document).ready(function () {
-        var biodata = {
-          nama: "Alfred",
-          kelas: "XII",
-          jurusan: "Rekayasa Perangkat Lunak",
-          alamat: "Cimahi",
-        };
+      let biodata = {
+        nama: "Alfred",
+        kelas: "XII",
+        jurusan: "Rekayasa Perangkat Lunak",
+        alamat: "Cimahi",
+      };
 
-        $("table").append(
-          "<tr><td>nama</td><td>" + biodata.nama + "</td></tr>",
-          "<tr><td>kelas</td><td>" + biodata.kelas + "</td></tr>",
-          "<tr><td>jurusan</td><td>" + biodata.jurusan + "</td></tr>",
-          "<tr><td>alamat</td><td>" + biodata.alamat + "</td></tr>"
-        );
-      });
+      let table = document.getElementById("table");
+
+      table.innerHTML = `
+       <tr><td>nama</td><td>${biodata.nama}</td></tr>
+       <tr><td>kelas</td><td>${biodata.kelas}</td></tr>
+       <tr><td>jurusan</td><td>${biodata.jurusan}</td></tr>
+       <tr><td>alamat </td><td>${biodata.alamat}</td></tr>
+      `;
     </script>
   </body>
 </html>

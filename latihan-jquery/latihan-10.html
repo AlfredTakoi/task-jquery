@@ -12,7 +12,7 @@
     <div class="container mt-5">
       <h1>Latihan 10</h1>
       <p>Struk Pembelanjaan</p>
-      <table class="table">
+      <table class="table" id="table">
         <thead>
           <tr>
             <th>Nama Barang</th>
@@ -26,85 +26,169 @@
       <p id="total-keseluruhan-belanja" class="float-end"></p>
     </div>
     <script>
-      $(document).ready(function () {
-        const rupiah = (number) => {
-          return new Intl.NumberFormat("id-ID", {
-            style: "currency",
-            currency: "IDR",
-          }).format(number);
-        };
+      // $(document).ready(function () {
+      //   const rupiah = (number) => {
+      //     return new Intl.NumberFormat("id-ID", {
+      //       style: "currency",
+      //       currency: "IDR",
+      //     }).format(number);
+      //   };
 
-        var strukPembelanjaan = [
-          {
-            namaBarang: "Kemeja Keren",
-            kuantitas: 12,
-            hargaSatuan: 140000,
-            total: null
-          },
-          {
-            namaBarang: "Sepatu Adidas",
-            kuantitas: 4,
-            hargaSatuan: 150000,
-            total: null
-          },
-          {
-            namaBarang: "Lemari",
-            kuantitas: 5,
-            hargaSatuan: 500000,
-            total: null
-          },
-          {
-            namaBarang: "TV Led",
-            kuantitas: 10,
-            hargaSatuan: 1400000,
-            total: null
-          },
-          {
-            namaBarang: "Kasur",
-            kuantitas: 20,
-            hargaSatuan: 900000,
-            total: null
-          },
-          {
-            namaBarang: "Kursi",
-            kuantitas: 10,
-            hargaSatuan: 250000,
-            total: null
-          },
-          {
-            namaBarang: "Meja",
-            kuantitas: 10,
-            hargaSatuan: 300000,
-            total: null
-          },
-        ];
+      //   var strukPembelanjaan = [
+      //     {
+      //       namaBarang: "Kemeja Keren",
+      //       kuantitas: 12,
+      //       hargaSatuan: 140000,
+      //       total: null
+      //     },
+      //     {
+      //       namaBarang: "Sepatu Adidas",
+      //       kuantitas: 4,
+      //       hargaSatuan: 150000,
+      //       total: null
+      //     },
+      //     {
+      //       namaBarang: "Lemari",
+      //       kuantitas: 5,
+      //       hargaSatuan: 500000,
+      //       total: null
+      //     },
+      //     {
+      //       namaBarang: "TV Led",
+      //       kuantitas: 10,
+      //       hargaSatuan: 1400000,
+      //       total: null
+      //     },
+      //     {
+      //       namaBarang: "Kasur",
+      //       kuantitas: 20,
+      //       hargaSatuan: 900000,
+      //       total: null
+      //     },
+      //     {
+      //       namaBarang: "Kursi",
+      //       kuantitas: 10,
+      //       hargaSatuan: 250000,
+      //       total: null
+      //     },
+      //     {
+      //       namaBarang: "Meja",
+      //       kuantitas: 10,
+      //       hargaSatuan: 300000,
+      //       total: null
+      //     },
+      //   ];
 
+      //   for (let index = 0; index < strukPembelanjaan.length; index++) {
+      //       const element = strukPembelanjaan[index]
+      //       const totalBarang = strukPembelanjaan[index].kuantitas * strukPembelanjaan[index].hargaSatuan
+      //       strukPembelanjaan[index].total = totalBarang
+      //       $("table").append(
+      //       "<tr><td>" +
+      //         element.namaBarang +
+      //         "</td><td>" +
+      //         element.kuantitas +
+      //         "</td><td>" +
+      //         rupiah(element.hargaSatuan) +
+      //         "</td><td>" +
+      //         rupiah(element.total) +
+      //         "</td></tr>"
 
-        for (let index = 0; index < strukPembelanjaan.length; index++) {
-            const element = strukPembelanjaan[index]
-            const totalBarang = strukPembelanjaan[index].kuantitas * strukPembelanjaan[index].hargaSatuan
-            strukPembelanjaan[index].total = totalBarang
-            $("table").append(
-            "<tr><td>" +
-              element.namaBarang +
-              "</td><td>" +
-              element.kuantitas +
-              "</td><td>" +
-              rupiah(element.hargaSatuan) +
-              "</td><td>" +
-              rupiah(element.total) +
-              "</td></tr>"
-              
-          );
-        }
+      //     );
+      //   }
 
-        const totalKesuluruhanBarang = strukPembelanjaan.reduce((accumulator, object) => {
+      //   const totalKesuluruhanBarang = strukPembelanjaan.reduce((accumulator, object) => {
+      //     return accumulator + object.total;
+      //   }, 0);
+
+      //   $('#total-keseluruhan-belanja').append("Total Keseluruhan Barang ", rupiah(totalKesuluruhanBarang))
+
+      // });
+
+      let table = document.getElementById("table");
+      let totalKesuluruhanBelanja = document.getElementById(
+        "total-keseluruhan-belanja"
+      );
+      
+      const rupiah = (number) => {
+        return new Intl.NumberFormat("id-ID", {
+          style: "currency",
+          currency: "IDR",
+        }).format(number);
+      };
+
+      let strukPembelanjaan = [
+        {
+          namaBarang: "Kemeja Keren",
+          kuantitas: 12,
+          hargaSatuan: 140000,
+          total: null,
+        },
+        {
+          namaBarang: "Sepatu Adidas",
+          kuantitas: 4,
+          hargaSatuan: 150000,
+          total: null,
+        },
+        {
+          namaBarang: "Lemari",
+          kuantitas: 5,
+          hargaSatuan: 500000,
+          total: null,
+        },
+        {
+          namaBarang: "TV Led",
+          kuantitas: 10,
+          hargaSatuan: 1400000,
+          total: null,
+        },
+        {
+          namaBarang: "Kasur",
+          kuantitas: 20,
+          hargaSatuan: 900000,
+          total: null,
+        },
+        {
+          namaBarang: "Kursi",
+          kuantitas: 10,
+          hargaSatuan: 250000,
+          total: null,
+        },
+        {
+          namaBarang: "Meja",
+          kuantitas: 10,
+          hargaSatuan: 300000,
+          total: null,
+        },
+      ];
+
+      for (let index = 0; index < strukPembelanjaan.length; index++) {
+        const element = strukPembelanjaan[index];
+        const totalBarang =
+          strukPembelanjaan[index].kuantitas *
+          strukPembelanjaan[index].hargaSatuan;
+        strukPembelanjaan[index].total = totalBarang;
+        table.innerHTML +=
+          "<tr><td>" +
+          element.namaBarang +
+          "</td><td>" +
+          element.kuantitas +
+          "</td><td>" +
+          rupiah(element.hargaSatuan) +
+          "</td><td>" +
+          rupiah(element.total) +
+          "</td></tr>";
+      }
+
+      let totalKesuluruhanBarang = strukPembelanjaan.reduce(
+        (accumulator, object) => {
           return accumulator + object.total;
-        }, 0);
+        },
+        0
+      );
 
-        $('#total-keseluruhan-belanja').append("Total Keseluruhan Barang ", rupiah(totalKesuluruhanBarang))
-       
-      });
+      totalKesuluruhanBelanja.innerHTML =
+      "Total Keseluruhan Barang " + rupiah(totalKesuluruhanBarang);
     </script>
   </body>
 </html>
