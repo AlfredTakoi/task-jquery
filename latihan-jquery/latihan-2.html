@@ -28,6 +28,12 @@
       let nilaiBeli;
       let uangPelanggan;
       const form = document.getElementById("form");
+      const rupiah = (number) => {
+        return new Intl.NumberFormat("id-ID", {
+          style: "currency",
+          currency: "IDR",
+        }).format(number);
+      };
 
       form.addEventListener("submit", function (event) {
         event.preventDefault();
@@ -43,19 +49,19 @@
             var diskon = parseInt(nilaiBeli) * 0.07;
             hargaDiskon = parseInt(nilaiBeli) - diskon;
             alert(
-              "anda mendapatkan diskon sebesar 7% menjadi Rp " + hargaDiskon
+              "anda mendapatkan diskon sebesar 7% menjadi " + rupiah(hargaDiskon)
             );
-            alert("uang kembalian anda Rp " + result);
+            alert("uang kembalian anda " + rupiah(result));
           } else if (
             parseInt(nilaiBeli) > 200000 ||
             parseInt(nilaiBeli) <= 400000
           ) {
-            var diskon = parseInt(nilaiBeli) / 20;
+            var diskon = parseInt(nilaiBeli) * 0.05;
             hargaDiskon = parseInt(nilaiBeli) - diskon;
             alert(
-              "anda mendapatkan diskon sebesar 5% menjadi Rp " + hargaDiskon
+              "anda mendapatkan diskon sebesar 5% menjadi " + rupiah(hargaDiskon)
             );
-            alert("uang kembalian anda Rp " + result);
+            alert("uang kembalian anda " + rupiah(result));
           }
         }
       });
