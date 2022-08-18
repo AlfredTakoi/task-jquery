@@ -38,7 +38,7 @@
       form.addEventListener("submit", function (event) {
         event.preventDefault();
 
-        nilaiBeli = document.getElementById("nilai-beli").value
+        nilaiBeli = document.getElementById("nilai-beli").value;
         uangPelanggan = document.getElementById("uang-pelanggan").value;
 
         if (parseInt(uangPelanggan) < parseInt(nilaiBeli)) {
@@ -49,7 +49,8 @@
             var diskon = parseInt(nilaiBeli) * 0.07;
             hargaDiskon = parseInt(nilaiBeli) - diskon;
             alert(
-              "anda mendapatkan diskon sebesar 7% menjadi " + rupiah(hargaDiskon)
+              "anda mendapatkan diskon sebesar 7% menjadi " +
+                rupiah(hargaDiskon)
             );
             alert("uang kembalian anda " + rupiah(result));
           } else if (
@@ -59,7 +60,8 @@
             var diskon = parseInt(nilaiBeli) * 0.05;
             hargaDiskon = parseInt(nilaiBeli) - diskon;
             alert(
-              "anda mendapatkan diskon sebesar 5% menjadi " + rupiah(hargaDiskon)
+              "anda mendapatkan diskon sebesar 5% menjadi " +
+                rupiah(hargaDiskon)
             );
             alert("uang kembalian anda " + rupiah(result));
           }
