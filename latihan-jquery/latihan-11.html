@@ -34,71 +34,81 @@
         </div>
       </div>
 
-      <button class="btn btn-primary" id="hitung">Hitung</button>
+      <button class="btn btn-primary" id="hitung" onclick="hitung()">
+        Hitung
+      </button>
 
       <p id="total-barang" class="float-end"></p>
     </div>
     <script>
-      $(document).ready(function () {
-        $("#hitung").click(function () {
+      const rupiah = (number) => {
+        return new Intl.NumberFormat("id-ID", {
+          style: "currency",
+          currency: "IDR",
+        }).format(number);
+      };
 
-          const rupiah = (number) => {
-            return new Intl.NumberFormat("id-ID", {
-              style: "currency",
-              currency: "IDR",
-            }).format(number);
-          };
+      let daftarBarang;
+      let kuantitas;
+      let hargaSatuan;
+      let totalBarang = document.getElementById("total-barang");
 
-          var daftarBarang = $("#daftar-barang").val();
-          var kuantitas = $("#kuantitas").val();
-          var hargaSatuan;
-          if (daftarBarang == "Kemeja Keren") {
+      function hitung() {
+        daftarBarang = document.getElementById("daftar-barang").value;
+        kuantitas = document.getElementById("kuantitas").value;
+
+        switch (daftarBarang) {
+          case "Kemeja Keren":
             hargaSatuan = 140000;
             total = hargaSatuan * kuantitas;
-            $("#total-barang").text(
-              `Total Harga Barang ${daftarBarang} ${rupiah(total)}`
-            );
-          } else if (daftarBarang == "Sepatu Adidas") {
+            totalBarang.innerHTML = `Total Harga Barang ${daftarBarang} ${rupiah(
+              total
+            )}`;
+            break;
+          case "Sepatu Addidas":
             hargaSatuan = 150000;
             total = hargaSatuan * kuantitas;
-            $("#total-barang").text(
-              `Total Harga Barang ${daftarBarang} ${rupiah(total)}`
-            );
-          } else if (daftarBarang == "Lemari") {
+            totalBarang.innerHTML = `Total Harga Barang ${daftarBarang} ${rupiah(
+              total
+            )}`;
+            break;
+          case "Lemari":
             hargaSatuan = 500000;
             total = hargaSatuan * kuantitas;
-            $("#total-barang").text(
-              `Total Harga Barang ${daftarBarang} ${rupiah(total)}`
-            );
-          } else if (daftarBarang == "TV Led") {
+            totalBarang.innerHTML = `Total Harga Barang ${daftarBarang} ${rupiah(
+              total
+            )}`;
+            break;
+          case "TV Led":
             hargaSatuan = 1400000;
             total = hargaSatuan * kuantitas;
-            $("#total-barang").text(
-              `Total Harga Barang ${daftarBarang} ${rupiah(total)}`
-            );
-          } else if (daftarBarang == "Kasur") {
+            totalBarang.innerHTML = `Total Harga Barang ${daftarBarang} ${rupiah(
+              total
+            )}`;
+            break;
+          case "Kasur":
             hargaSatuan = 900000;
             total = hargaSatuan * kuantitas;
-            $("#total-barang").text(
-              "Total Harga Barang ",
-              daftarBarang, " ",
-              rupiah(total)
-            );
-          } else if (daftarBarang == "Kursi") {
+            totalBarang.innerHTML = `Total Harga Barang ${daftarBarang} ${rupiah(
+              total
+            )}`;
+            break;
+          case "Kursi":
             hargaSatuan = 250000;
             total = hargaSatuan * kuantitas;
-            $("#total-barang").text(
-              `Total Harga Barang ${daftarBarang} ${rupiah(total)}`
-            );
-          } else if (daftarBarang == "Meja") {
+            totalBarang.innerHTML = `Total Harga Barang ${daftarBarang} ${rupiah(
+              total
+            )}`;
+            break;
+          case "Meja":
             hargaSatuan = 300000;
             total = hargaSatuan * kuantitas;
-            $("#total-barang").text(
-              `Total Harga Barang ${daftarBarang} ${rupiah(total)}`
-            );
-          }
-        });
-      });
+            totalBarang.innerHTML = `Total Harga Barang ${daftarBarang} ${rupiah(
+              total
+            )}`;
+            break;
+        }
+      }
     </script>
   </body>
 </html>
