@@ -15,22 +15,6 @@
       <ul id="list"></ul>
     </div>
     <script>
-      // $(document).ready(function () {
-      //   var country = [
-      //     "England",
-      //     "Netherland",
-      //     "USA",
-      //     "Indonesia",
-      //     "Malaysia",
-      //     "Thailand",
-      //   ];
-
-      //   $.each(country, function(index, value){
-      //       $('ul').append($("<li>" +value + "</li>"))
-      //       $('li:nth-child(4)').css("color", "red")
-      //   })
-      // });
-
       var country = [
         "England",
         "Netherland",
@@ -42,15 +26,20 @@
 
       const list = document.getElementById("list");
 
-      for (let index = 0; index < country.length; index++) {
-        const element = country[index];
-        list.innerHTML += "<li>" + country[index] + "</li>";
-        const countryIndonesia = document.querySelector("#list :nth-child(4)");
-        if (element == "Indonesia") {
-          countryIndonesia.className = "text-danger";
-          console.log(element)
+      function searchIndonesia() {
+        for (let index = 0; index < country.length; index++) {
+          const element = country[index];
+          list.innerHTML += "<li>" + country[index] + "</li>";
+          const countryIndonesia = document.querySelector(
+            "#list :nth-child(4)"
+          );
+          if (element == "Indonesia") {
+            countryIndonesia.className = "text-danger";
+          }
         }
       }
+
+      searchIndonesia()
     </script>
   </body>
 </html>

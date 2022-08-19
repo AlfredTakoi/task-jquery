@@ -40,31 +40,41 @@
 
         nilaiBeli = document.getElementById("nilai-beli").value;
         uangPelanggan = document.getElementById("uang-pelanggan").value;
-
+        let result = uangPelanggan - nilaiBeli;
+        
         if (parseInt(uangPelanggan) < parseInt(nilaiBeli)) {
           alert("Maaf uang anda kurang");
-        } else if (parseInt(uangPelanggan) > parseInt(nilaiBeli)) {
-          var result = uangPelanggan - nilaiBeli;
-          if (parseInt(nilaiBeli) > 400000) {
-            var diskon = parseInt(nilaiBeli) * 0.07;
-            hargaDiskon = parseInt(nilaiBeli) - diskon;
-            alert(
-              "anda mendapatkan diskon sebesar 7% menjadi " +
-                rupiah(hargaDiskon)
-            );
-            alert("uang kembalian anda " + rupiah(result));
-          } else if (
-            parseInt(nilaiBeli) > 200000 ||
-            parseInt(nilaiBeli) <= 400000
-          ) {
-            var diskon = parseInt(nilaiBeli) * 0.05;
-            hargaDiskon = parseInt(nilaiBeli) - diskon;
-            alert(
-              "anda mendapatkan diskon sebesar 5% menjadi " +
-                rupiah(hargaDiskon)
-            );
+        } else if (parseInt(nilaiBeli) > 400000) {
+          var diskon = parseInt(nilaiBeli) * 0.07;
+          hargaDiskon = parseInt(nilaiBeli) - diskon;
+          alert(
+            "anda mendapatkan diskon sebesar 7% menjadi " + rupiah(hargaDiskon)
+          );
+          if (result == 0) {
+            alert("Uang Anda Pass");
+          } else {
             alert("uang kembalian anda " + rupiah(result));
           }
+        } else if (
+          parseInt(nilaiBeli) > 200000 &&
+          parseInt(nilaiBeli) <= 400000
+        ) {
+          var diskon = parseInt(nilaiBeli) * 0.05;
+          hargaDiskon = parseInt(nilaiBeli) - diskon;
+          alert(
+            "anda mendapatkan diskon sebesar 5% menjadi " + rupiah(hargaDiskon)
+          );
+          if (result == 0) {
+            alert("Uang Anda Pass");
+          } else {
+            alert("uang kembalian anda " + rupiah(result));
+          }
+        } else if (uangPelanggan === "" || nilaiBeli === "") {
+          alert("Silahkan masukkan yang valid");
+        } else if (result == 0) {
+          alert("Uang anda Pass");
+        } else {
+          alert("uang kembalian anda " + rupiah(result));
         }
       });
     </script>

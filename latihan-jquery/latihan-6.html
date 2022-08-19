@@ -8,21 +8,56 @@
     <script src="./../assets/js/jquery.js"></script>
     <title>Latihan 6 JQuery</title>
   </head>
-  <body>
+  <body class="text-bg-info">
     <div class="container mt-5">
       <h1>Latihan 6</h1>
-      <ul id="list"></ul>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card px-3 py-2 shadow border-0">
+            <span class="fw-bold">Kelas A</span>
+            <ul id="kelasA" class="p-3"></ul>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card px-3 py-2 shadow border-0">
+            <span class="fw-bold">Kelas B</span>
+            <ul id="kelasB" class="p-3"></ul>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card px-3 py-2 shadow border-0">
+            <span class="fw-bold">Kelas Gabungan</span>
+            <ul id="kelasBaru" class="p-3"></ul>
+          </div>
+        </div>
+      </div>
     </div>
     <script>
-      let list = document.getElementById("list");
-      let kelasA = ["Alfred", "Aldi", "Andi", "Budi", "Asep", "Rizky"];
-      let kelasB = ["Kirana", "Putri", "Putra", "Gilang", "Syahbandi", "Anton"];
+      let kelasA = document.getElementById("kelasA");
+      let kelasB = document.getElementById("kelasB");
+      let kelasBaru = document.getElementById("kelasBaru");
+
+      let arraykelasA = ["Alfred", "Aldi", "Andi", "Budi", "Asep", "Rizky"];
+      let arraykelasB = [
+        "Kirana",
+        "Putri",
+        "Putra",
+        "Gilang",
+        "Syahbandi",
+        "Anton",
+      ];
 
       let newKelas = [];
-      newKelas.push(...kelasA, ...kelasB);
+      newKelas.push(...arraykelasA, ...arraykelasB);
 
+      arraykelasA.forEach((element) => {
+        kelasA.innerHTML += `<li>${element}</li>`;
+      });
+      arraykelasB.forEach((element) => {
+        kelasB.innerHTML += `<li>${element}</li>`;
+      });
       newKelas.forEach((element) => {
-        list.innerHTML += `<li>${element}</li>`
+        kelasBaru.innerHTML += `<li>${element}</li>`;
       });
     </script>
   </body>
