@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JQuery DOM Manipulation</title>
+    <style>
+      .mydivs {
+          width: 100px;
+          height: 100px;
+          background-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>JQuery - Manipulation</h2>
+    <p>Apa nama ibukota Indonesia</p>
+    <button id="btn1">Set Value</button>
+    <button id="btn2">Get Value</button>
+    <div id="div1" class="mydivs">
+   
+    </div>
+
+    <script src="./../assets/js/jquery.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#btn2").click(function () {
+          $('p').text('Jakarta')
+        });
+      });
+    </script>
+  </body>
+</html>

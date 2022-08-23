@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./../assets/fa5/css/all.css">
+    <title>Document</title>
+    <style>
+      #slide_cont {
+        box-shadow: 0px 0px 10px 0px silver;
+        width: 600px;
+        height: 400px;
+        margin-top: 100px;
+      }
+      #slideshow_image {
+        width: 600px;
+        height: 400px;
+        object-fit: cover;
+      }
+      #prev_image,
+      #next_image {
+        width: 40px;
+        height: 40px;
+        object-fit: cover;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="slide_cont">
+      <img src="img/home.jpg" id="slideshow_image" />
+    </div>
+    <i class="fas fa-chevron-left fs-3 me-3" id="prev_image"></i>
+    <i class="fas fa-chevron-right fs-3" id="next_image"></i>
+    <input type="hidden" id="img_no" value="0" />
+
+    <script src="./../assets/js/jquery.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#prev_image").click(function () {
+          prev();
+        });
+        $("#next_image").click(function () {
+          next();
+        });
+      });
+
+      var images = ["tower", "bus", "romantic"];
+      function prev() {
+        $("#slideshow_image").fadeOut(300, function () {
+          var prev_val = document.getElementById("img_no").value;
+          var prev_val = Number(prev_val) - 1;
+          console.log(prev_val)
+          if (prev_val <= -1) {
+            prev_val = images.length - 1;
+          }
+          $("#slideshow_image").attr(
+            "src",
+            "img/" + images[prev_val] + ".jpg"
+          );
+          document.getElementById("img_no").value = prev_val;
+        });
+        $("#slideshow_image").fadeIn(1000);
+      }
+      function next() {
+        $("#slideshow_image").fadeOut(300, function () {
+          var next_val = document.getElementById("img_no").value;
+          var next_val = Number(next_val) + 1;
+          console.log(next_val)
+          if (next_val >= images.length) {
+            next_val = 0;
+          }
+          $("#slideshow_image").attr(
+            "src",
+            "img/" + images[next_val] + ".jpg"
+          );
+          document.getElementById("img_no").value = next_val;
+        });
+        $("#slideshow_image").fadeIn(1000);
+      }
+    </script>
+  </body>
+</html>

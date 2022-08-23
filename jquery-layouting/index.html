@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./../assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./../assets/fa5/css/all.css" />
+    <link rel="stylesheet" href="style.css" />
+    <title>JQuery Layouting</title>
+  </head>
+  <body>
+    <header class="mb-5">
+      <nav class="navbar py-3">
+        <div class="container">
+          <h2 class="text-uppercase">top tours</h2>
+          <i class="fas fa-bars fs-3"></i>
+        </div>
+      </nav>
+    </header>
+
+    <div class="container">
+      <section class="hero row mb-5">
+        <div class="col-md-5">
+          <img src="./img/tour.jpg" alt="" class="img-hero-1 w-100" />
+        </div>
+        <div class="col-md-7">
+          <div
+            class="title text-uppercase py-3 position-relative my-4 mb-5 ms-4"
+          >
+            <h1>where do you want to go?</h1>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <img src="./img/tour-2.jpg" alt="" class="img-hero-2 w-100" />
+            </div>
+            <div class="col-md-6">
+              <img src="./img/tour-3.jpg" alt="" class="img-hero-3 w-100" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="subscribe background-success py-5 px-2">
+        <div class="text-center">
+          <div class="position-relative d-flex mb-4">
+            <h1 class="text-uppercase fw-normal pb-4 m-auto">subscribe</h1>
+          </div>
+          <p class="mb-5">
+            Subscribe our newsletter to stay updated every moment
+          </p>
+          <input
+            type="text"
+            class="border-0 input-subscribe mb-2"
+            placeholder="Enter a valid email address"
+          />
+          <button
+            class="text-uppercase btn-submit ms-3 background-warning-solid"
+          >
+            submit
+          </button>
+        </div>
+      </section>
+
+      <section class="about row">
+        <div class="col-md-6">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="position-relative">
+                <h2 class="text-uppercase fw-normal">Every day is a journey</h2>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <p class="">
+                We have consultants with an average of 20 years experience and a
+                passion for travel available who will work out the details and
+                create unforgettable vacations.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <p>
+            When you plan your vacation with us we are there throughout the
+            entire process. This means making ourselves available to you before,
+            during and after travel.
+          </p>
+          <p>
+            We plan river and ocean cruises, romantic honeymoon packages to
+            sunny destinations, family, adventure and wellness travel along with
+            international and domestic customized itineraries.
+          </p>
+        </div>
+      </section>
+
+      <section class="feature row"></section>
+
+      <section class="testimonials row">
+        <div class="col-md-3 mb-3">
+          <div class="text-center">
+            <h1 id="tours">18</h1>
+            <p class=".tours">tours</p>
+          </div>
+        </div>
+        <div class="col-md-3 mb-3">
+          <div class="text-center">
+            <h1 id="experience">5</h1>
+            <p>exprience</p>
+          </div>
+        </div>
+        <div class="col-md-3 mb-3">
+          <div class="text-center">
+            <h1 id="destination">25</h1>
+            <p>destination</p>
+          </div>
+        </div>
+        <div class="col-md-3 mb-3">
+          <div class="text-center">
+            <h1 id="happy">808</h1>
+            <p>happy clients</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="story row mb-5">
+        <div class="col-md-3 mb-3">
+          <div class="mb-4 mt-5 ms-4">
+            <div class="title text-uppercase position-relative mb-3">
+              <h2 class="text-uppercase fw-normal py-4" id="title">
+                happy days
+              </h2>
+            </div>
+            <p id="description">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+              Laboriosam, debitis? Architecto error ipsa eveniet fugiat?
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="example-traveling mb-5">
+        <div class="header">
+          <div class="title text-uppercase position-relative mt-4 mb-2">
+            <h2 class="text-uppercase fw-normal py-3">traveling delights</h2>
+          </div>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel
+            eligendi vitae laboriosam amet, libero dolore eius ducimus autem
+            harum molestias. Accusamus accusantium commodi, repellat aperiam
+            impedit totam quaerat aliquid a eaque suscipit soluta laudantium!
+            Laborum error quibusdam eveniet quas veniam!
+          </p>
+        </div>
+        <div class="body row">
+          <div class="col-md-7 position-relative">
+            <div class="position-relative">
+              <img src="./img/packing.jpg" alt="packing" class="img-packing" />
+            </div>
+          </div>
+          <div class="col-md-5">
+            <div
+              class="body-content background-warning px-4 py-5 my-5 position-absolute"
+            >
+              <div class="title text-uppercase position-relative my-4">
+                <h1 class="text-uppercase fw-normal py-3">
+                  a tour is a perfectly planned vacation
+                </h1>
+              </div>
+              <p>
+                Agency takes away the hassle and introduces you to places you've
+                never thought about going - just sit back, relax and have all
+                the fun!
+              </p>
+              <div class="pagination float-end text-secondary fw-bolder">
+                <i class="fas fa-chevron-left fs-3 me-3" id="prev"></i>
+                <i class="fas fa-chevron-right fs-3" id="next"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <footer>
+      <div class="footer-start">
+        <div class="text-center py-5">
+          <h1 class="text-uppercase fw-normal mb-5">top tours</h1>
+          <div class="fs-4 mb-4">
+            <i class="fab fa-facebook-f me-3"></i>
+            <i class="fab fa-twitter me-3"></i>
+            <i class="fab fa-instagram me-3"></i>
+            <i class="fab fa-linkedin-in me-3"></i>
+          </div>
+          <p class="fs-5">©2018 Top Tours. All rights reserved.</p>
+        </div>
+      </div>
+      <div class="footer-end py-5 text-light text-center">
+        <span
+          ><a href="">Template</a> created with <a href="">Nicepage.</a></span
+        >
+      </div>
+    </footer>
+
+    <script src="./../assets/js/bootstrap.min.js"></script>
+    <script src="./../assets/js/jquery.js"></script>
+
+    <script>
+      $(document).ready(function () {
+        const sectionFeature = [
+          {
+            image: "tower",
+            boxTitle: "Group Tours",
+            boxDescription:
+              " The first thing to say about our private group tours of Ireland is that each one is different and every itinerary is tailored",
+            background: "background-warning",
+          },
+          {
+            image: "bus",
+            boxTitle: "Bus Travel",
+            boxDescription:
+              "Each bus tour has been carefully architected so that you can take in the sights and scenery that Ireland has to offer, in a relaxed",
+            background: "background-primary",
+          },
+          {
+            image: "romantic",
+            boxTitle: "Romantic",
+            boxDescription:
+              "We have the perfect hideaways for your Irish honeymoon or romantic getaway. Throughout Ireland, in the most stunning locations",
+            background: "background-success",
+          },
+        ];
+
+        $.each(sectionFeature, function (index, value) {
+          $(".feature").append(`
+            <div class="col-md-4 mb-3 position-relative">
+              <img src="./img/${value.image}.jpg" alt="" class="w-100 img-features" id="image-box" />
+              <div
+                class="box-wrapper pt-3 pb-3 px-3 ${value.background} position-absolute"
+              >
+                <div class="title text-uppercase position-relative my-4">
+                  <h2 class="text-uppercase fw-normal py-3" id="box-title">${value.boxTitle}</h2>
+                </div>
+                <p class="fst-italic" id="box-description">${value.boxDescription}</p>
+              </div>
+            </div>
+          `);
+
+          $(".story").prepend(`
+            <div class="col-md-3 mb-3">
+              <img src="./img/${value.image}.jpg" alt="tower" class="img-fluid" />
+            </div>
+          `);
+        });
+
+        let countTours = 18;
+        setInterval(function () {
+          $("#tours").text(countTours);
+          countTours++;
+        }, 15000);
+
+        let countExperience = 5;
+        setInterval(function () {
+          $("#experience").text(countExperience);
+          countExperience++;
+        }, 10000);
+
+        let countDestination = 25;
+        setInterval(function () {
+          $("#destination").text(countDestination);
+          countDestination++;
+        }, 8000);
+
+        let countHappyClients = 808;
+        setInterval(function () {
+          $("#happy").text(countHappyClients);
+          countHappyClients++;
+        }, 2000);
+
+        $(".story .col-md-3:nth-child(1) img").click(function () {
+          $(".story #title").text("Good Days");
+          $(".story #description").text(
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, iusto."
+          );
+        });
+        $(".story .col-md-3:nth-child(2) img").click(function () {
+          $(".story #title").text("Nice Days");
+          $(".story #description").text(
+            "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Itaque maiores facilis pariatur dignissimos!"
+          );
+        });
+        $(".story .col-md-3:nth-child(3) img").click(function () {
+          $(".story #title").text("The Tall Tower");
+          $(".story #description").text(
+            "We plan river and ocean cruises, romantic honeymoon packages to sunny destinations, family, adventure and weliness travel"
+          );
+        });
+
+        let images = ["./img/tour.jpg", "./img/tour-2.jpg", "./img/tour-3.jpg"];
+      
+        $("#next").click(function () {
+          console.log("next");
+          $(".img-packing").attr("src", "./img/tour-2.jpg");
+        });
+      });
+    </script>
+  </body>
+</html>
