@@ -1,0 +1,102 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300;500;600;800&display=swap");
+
+.background-secondary-thin {
+  background-color: rgb(237, 237, 237);
+}
+
+body {
+  font-family: "Raleway", sans-serif;
+}
+header {
+  background-image: url("./../../img/home.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.img-logo {
+  width: 90px;
+}
+
+.hero h1 {
+  letter-spacing: 3px;
+  width: 50%;
+  font-size: 45px;
+}
+.hero p {
+  width: 64%;
+}
+
+.btn-hero {
+  border: none;
+  outline: none;
+  letter-spacing: 1.5px;
+  font-size: 18px;
+  color: #1487af;
+  transition: 0.3s ease;
+}
+
+.btn-hero:hover {
+  color: rgb(8, 8, 8);
+}
+
+.active {
+  color: #1487af !important;
+}
+
+.link-nav:hover {
+  color: #1487af;
+  transition: 0.3s ease;
+}
+
+.feature-one h5 {
+  letter-spacing: 3px;
+}
+
+.img-icon {
+  width: 39% !important;
+}
+
+.feature-two-image {
+  background-image: url("./../../img/trucking.jpg");
+  background-size: cover;
+  background-position: center;
+  /* background-attachment: fixed; */
+  background-repeat: no-repeat;
+}
+.feature-three-image {
+  background-image: url("./../../img/trucking.jpg");
+  background-size: cover;
+  background-position: center;
+  /* background-attachment: fixed; */
+  background-repeat: no-repeat;
+}
+
+.feature-two-content,
+.feature-three-content {
+  margin-top: 7em;
+}
+
+.feature-three-content {
+    padding-left: 100px;
+    padding-right: 50px;
+}
+.feature-two-content h1
+ {
+  letter-spacing: 4px;
+}
+
+.feature-three-content h1{
+    letter-spacing: 2px;
+}
+
+.feature-two-content p {
+  width: 85%;
+}
+
+@media screen and (max-width: 768px) {
+  .menu {
+    display: none;
+  }
+}
