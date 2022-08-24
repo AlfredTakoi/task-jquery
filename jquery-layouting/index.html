@@ -153,24 +153,14 @@
         </div>
         <div class="body row">
           <div class="col-md-7 position-relative">
-            <div class="position-relative">
-              <img src="./img/packing.jpg" alt="packing" class="img-packing" />
-            </div>
+            <div class="position-relative image-traveling"></div>
           </div>
           <div class="col-md-5">
             <div
               class="body-content background-warning px-4 py-5 my-5 position-absolute"
             >
-              <div class="title text-uppercase position-relative my-4">
-                <h1 class="text-uppercase fw-normal py-3">
-                  a tour is a perfectly planned vacation
-                </h1>
-              </div>
-              <p>
-                Agency takes away the hassle and introduces you to places you've
-                never thought about going - just sit back, relax and have all
-                the fun!
-              </p>
+              <div class="title text-uppercase position-relative my-4"></div>
+              <div class="description"></div>
               <div class="pagination float-end text-secondary fw-bolder">
                 <i class="fas fa-chevron-left fs-3 me-3" id="prev"></i>
                 <i class="fas fa-chevron-right fs-3" id="next"></i>
@@ -294,11 +284,66 @@
           );
         });
 
-        let images = ["./img/tour.jpg", "./img/tour-2.jpg", "./img/tour-3.jpg"];
-      
+        let exampleTraveling = [
+          {
+            image: "packing",
+            title: "a tour is a perfectly planned vacation",
+            description:
+              " Agency takes away the hassle and introduces you to places you've never thought about going - just sit back, relax and have all the fun! ",
+          },
+          {
+            image: "tour",
+            title: "7 UNESCO World Heritage Sites",
+            description:
+              " Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui quod quam maxime quas nemo? A in alias obcaecati dolor blanditiis? ",
+          },
+          {
+            image: "tour-2",
+            title: " Tiger Conservation in India",
+            description:
+              "  Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi est sapiente exercitationem culpa a tempore, neque illum eveniet fuga sed. ",
+          },
+          {
+            image: "tour-3",
+            title: " Tips For Visiting the Pyramids of Giza",
+            description:
+              " Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita maxime excepturi sit in fuga assumenda dolores, mollitia soluta voluptatibus distinctio. ",
+          },
+        ];
+
+        $.each(exampleTraveling, function (index, value) {
+          $(".example-traveling .body .body-content .title").append(`
+              <h1 class="text-uppercase fw-normal py-3 heading">
+                 ${value.title}
+              </h1>
+          `);
+          $(".example-traveling .body .body-content .description").append(`
+              <p class="text">
+                ${value.description}
+              </p>
+          `);
+          $(".image-traveling").append(`
+              <img src="./img/${value.image}.jpg" alt="packing" class="img-packing" />
+          `);
+        });
+
         $("#next").click(function () {
-          console.log("next");
-          $(".img-packing").attr("src", "./img/tour-2.jpg");
+          const nextImg = $('.img-packing:visible').hide().next('img')
+          nextImg.length ? nextImg.show() : $('.img-packing:first').show()
+          console.log(nextImg.length)
+          const nextHead = $(".heading:visible").hide().next("h1");
+          nextHead.length ? nextHead.show() : $(".heading:first").show();
+          const nextDesc = $(".text:visible").hide().next("p");
+          nextDesc.length ? nextDesc.show() : $(".text:first").show();
+          const nextImgVisible = $('.img-packing:visible')
+        });
+        $("#prev").click(function () {
+          const nextImg = $('.img-packing:visible').hide().prev('img')
+          nextImg.length ? nextImg.show() : $('.img-packing:last').show()
+          const nextHead = $(".heading:visible").hide().prev("h1");
+          nextHead.length ? nextHead.show() : $(".heading:last").show();
+          const prev = $(".text:visible").hide().prev("p");
+          prev.length ? prev.show() : $(".text:last").show();
         });
       });
     </script>

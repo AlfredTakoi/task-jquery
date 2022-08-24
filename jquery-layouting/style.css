@@ -12,7 +12,7 @@
 }
 
 .background-warning-solid {
-    background-color: #f1c7b2;
+  background-color: #f1c7b2;
 }
 
 /* Global Style End */
@@ -195,6 +195,12 @@
   bottom: 0;
 }
 
+.example-traveling .body .body-content .heading:not(:first-child),
+.example-traveling .body .body-content .text:not(:first-child),
+.example-traveling .body .image-traveling .img-packing:not(:first-child) {
+  display: none;
+}
+
 .footer-start {
   background-color: #f8fdfc;
 }
@@ -204,7 +210,7 @@
 }
 
 #tours {
-  transition: 0.5s
+  transition: 0.5s;
 }
 
 @media screen and (min-width: 1200px) {
@@ -278,13 +284,13 @@
     margin-bottom: 120px;
   }
   .footer-start p {
-      font-size: 17px !important;
+    font-size: 17px !important;
   }
 
   footer {
-      margin-top: 510px;
+    margin-top: 510px;
   }
   .hero h1 {
-      font-size: 35px !important;
+    font-size: 35px !important;
   }
 }
