@@ -10,12 +10,17 @@
     <title>HOME | Nineodfreight</title>
   </head>
   <body>
-    <header class="vh-100">
+    <header>
       <nav
-        class="navbar navbar-expand-lg bg-transparent navbar-dark py-3 shadow fixed-top"
+        class="navbar navbar-expand-lg navbar-dark py-3 shadow fixed-top navigation"
       >
         <div class="container">
           <img src="./img/logo.svg" alt="logo" class="img-logo" />
+          <img
+            src="./img/NF-Black.svg"
+            alt="logo"
+            class="img-logo-black d-none"
+          />
           <button
             class="navbar-toggler toggle"
             type="button"
@@ -34,7 +39,7 @@
               >
             </li>
             <li class="nav-item me-4 fs-6 fw-semibold">
-              <a class="nav-link link-nav" href="#">about</a>
+              <a class="nav-link link-nav" href="about.html">about</a>
             </li>
             <li class="nav-item me-4 fs-6 fw-semibold">
               <a class="nav-link link-nav" href="#">service</a>
@@ -64,7 +69,7 @@
       </section>
     </header>
 
-    <section class="feature-one row gx-0">
+    <section class="excellence row gx-0">
       <div class="col-md-4">
         <div class="feature-one-content text-center p-5">
           <img
@@ -115,18 +120,22 @@
       </div>
     </section>
 
-    <section class="feature-two row gx-0">
-      <div class="col-md-6">
-        <div class="feature-two-image w-100 h-100"></div>
-      </div>
-      <div class="col-md-6">
-        <div class="feature-two-content h-100 ps-4">
+    <div class="feature-wrapper">
+      <section class="feature d-flex">
+        <div class="w-50 feature-image">
+          <img
+            src="./img/trucking_edited.jpg"
+            alt="trucking"
+            class="w-100 h-100"
+          />
+        </div>
+        <div class="feature-content h-100 w-50 ps-4">
           <h1 class="text-uppercase fw-bold">Trucking and Freight Transport</h1>
-          <p class="fs-5">
+          <p class="fs-5 sub-heading">
             The world is changing all around us. To continue to thrive as a
             business over the next ten years and beyond.
           </p>
-          <p>
+          <p class="feature-description">
             Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
             nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
             erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
@@ -136,68 +145,66 @@
             et dolore magna aliquyam erat, sed diam voluptua.
           </p>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section class="feature-three row gx-0">
-      <div class="col-md-6">
-        <div class="feature-three-content w-100 h-100 mb-5">
-          <p class="fs-5 text-uppercase m-0">why choose us</p>
+      <section class="feature d-flex">
+        <div class="feature-content w-50 h-100 m-0 p-5">
+          <p class="fs-5 text-uppercase m-0 sub-heading">why choose us</p>
           <h1 class="text-uppercase fw-bold mb-5">Our Special Features</h1>
-          <div class="d-flex mb-5">
+          <div class="d-flex feature-item mb-5">
             <img
               src="./img/smile.svg"
               alt="smile-icon"
-              class="feature-three-icon me-4"
+              class="feature-icon me-4"
             />
             <div class="w-100">
-              <p class="fs-4 text-uppercase fw-semibold m-0">
+              <p class="fs-4 text-uppercase fw-semibold m-0 mb-2 w-100">
                 100% satisfied customers
               </p>
-              <p>
+              <p class="w-100">
                 Our customers are the luckiest people in the entire world,
                 getting their mail safe and in time.
               </p>
             </div>
           </div>
-          <div class="d-flex mb-5">
+          <div class="d-flex feature-item mb-5">
             <img
               src="./img/medal.svg"
               alt="smile-icon"
-              class="feature-three-icon me-4"
+              class="feature-icon me-4"
             />
             <div class="w-100">
-              <p class="fs-4 text-uppercase fw-semibold m-0">
+              <p class="fs-4 text-uppercase fw-semibold m-0 w-100 mb-2">
                 quality service affordable price
               </p>
-              <p>
+              <p class="w-100">
                 Our customers are the luckiest people in the entire world,
                 getting their mail safe and in time.
               </p>
             </div>
           </div>
-          <div class="d-flex">
+          <div class="d-flex feature-item">
             <img
               src="./img/planet-earth.svg"
               alt="smile-icon"
-              class="feature-three-icon me-4"
+              class="feature-icon me-4"
             />
             <div class="w-100">
-              <p class="fs-4 text-uppercase fw-semibold m-0">
+              <p class="fs-4 text-uppercase fw-semibold m-0 w-100 mb-2">
                 quality service affordable price
               </p>
-              <p>
+              <p class="w-100">
                 Our customers are the luckiest people in the entire world,
                 getting their mail safe and in time.
               </p>
             </div>
           </div>
         </div>
-      </div>
-      <div class="col-md-6">
-        <div class="feature-three-image w-100 h-100"></div>
-      </div>
-    </section>
+        <div class="feature-image w-50">
+          <img src="./img/special.jpg" alt="special" class="w-100 h-100" />
+        </div>
+      </section>
+    </div>
 
     <section class="contact-us text-light d-flex align-items-center">
       <div class="container lh-2">
@@ -217,13 +224,15 @@
     </section>
 
     <section class="maps">
-      <img src="./img/maps.png" alt="" class="w-100" />
+      <img src="./img/maps.png" alt="maps" class="w-100 maps-image" />
     </section>
 
     <footer class="py-4 container">
-      <div class="row">
+      <div class="row gx-0">
         <div class="col-md-4">
-          <p class="fw-light text-center">Nineod Freight &copy; All Rights Reserved</p>
+          <p class="fw-light footer-title">
+            Nineod Freight &copy; All Rights Reserved
+          </p>
         </div>
         <div class="col-md-4">
           <p class="fw-light text-center">
@@ -240,13 +249,40 @@
         </div>
         <div class="col-md-4">
           <div class="media-social-icon d-flex justify-content-end">
-            <a href="" class="text-secondary"><i class="fab fa-facebook-f me-3"></i></a>
-            <a href="" class="text-secondary"><i class="fab fa-twitter me-3"></i></a>
-            <a href="" class="text-secondary"><i class="fab fa-instagram me-3"></i></a>
-            <a href="" class="text-secondary"><i class="fab fa-linkedin-in me-3"></i></a>
+            <a href="" class="text-secondary"
+              ><i class="fab fa-facebook-f me-3"></i
+            ></a>
+            <a href="" class="text-secondary"
+              ><i class="fab fa-twitter me-3"></i
+            ></a>
+            <a href="" class="text-secondary"
+              ><i class="fab fa-instagram me-3"></i
+            ></a>
+            <a href="" class="text-secondary"
+              ><i class="fab fa-linkedin-in me-3"></i
+            ></a>
           </div>
         </div>
       </div>
     </footer>
+
+    <script src="./assets/js/jquery.js"></script>
+    <script>
+      $(document).ready(function () {
+        $(window).scroll(function () {
+          if ($(this).scrollTop() > 100) {
+            $(".navigation").css("background", "#fff");
+          } else {
+            $(".navigation").css("background", "transparent");
+          }
+          $(".navigation").toggleClass(
+            "navbar-dark",
+            $(this).scrollTop() < 100
+          );
+          $(".img-logo-black").toggleClass("d-none", $(this).scrollTop() < 100);
+          $(".img-logo").toggleClass("d-none", $(this).scrollTop() > 100);
+        });
+      });
+    </script>
   </body>
 </html>

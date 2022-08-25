@@ -4,19 +4,34 @@
   background-color: rgb(237, 237, 237);
 }
 
+.scrolled {
+  background-color: #fff;
+  transition: 0.4s ease-in-out;
+}
+
+.scroll {
+  background-color: transparent;
+  transition: 0.4s ease-in-out;
+}
+
 body {
   font-family: "Raleway", sans-serif;
 }
 header {
   background-image: url("./../../img/home.jpg");
   background-size: cover;
-  background-position: center;
+  background-position: bottom;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  height: 100vh;
 }
 
 .img-logo {
   width: 90px;
+}
+
+.img-logo-black {
+  width: 89px;
 }
 
 .hero h1 {
@@ -50,7 +65,7 @@ header {
   transition: 0.3s ease;
 }
 
-.feature-one h5 {
+.excellence h5 {
   letter-spacing: 3px;
 }
 
@@ -58,50 +73,35 @@ header {
   width: 39% !important;
 }
 
-.feature-two-image {
-  background-image: url("./../../img/trucking.jpg");
-  background-size: cover;
-  background-position: center;
-  /* background-attachment: fixed; */
-  background-repeat: no-repeat;
-}
-.feature-three-image {
-  background-image: url("./../../img/special.jpg");
-  background-size: cover;
-  background-position: center;
-  /* background-attachment: fixed; */
-  background-repeat: no-repeat;
+.feature-content {
+  margin-top: 112px;
+  margin-bottom: 250px;
 }
 
-.feature-two-content {
-  margin-top: 7em;
-  margin-bottom: 10em !important;
+.navigation{
+  transition: .4s ease-in-out;
 }
 
-.feature-two-content h1,
-.feature-three-content h1 {
+.feature-content h1 {
   letter-spacing: 4px;
 }
 
-.feature-two-content p {
+.feature-content p {
   width: 85%;
-}
-
-.feature-three-content {
-  padding-left: 70px;
-  padding-right: 50px;
-  padding-top: 4em;
-  padding-bottom: 3em;
 }
 
 .feature-three-icon {
   width: 16%;
 }
 
-.contact-us{
-  height: 87vh;
+.feature-image img{
+  object-fit: cover;
+}
+
+.contact-us {
+  height: 500px;
   width: 100%;
-  background-image: url('./../../img/promotion.jpg');
+  background-image: url("./../../img/promotion.jpg");
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
@@ -112,7 +112,7 @@ header {
   width: 80%;
 }
 
-.contact-us h1{
+.contact-us h1 {
   letter-spacing: 5px;
 }
 
@@ -135,13 +135,148 @@ header {
   width: 4%;
 }
 
+/* about */
+.about-header {
+  height: 70vh;
+  background-image: url("./../../img/container.jpg");
+  background-size: cover;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
 
+.about {
+  height: 70vh;
+}
+
+.about-content h2 {
+  letter-spacing: 6px;
+}
+
+.about-content p {
+  text-align: justify;
+}
+
+@media screen and (max-width: 992px) {
+  .menu {
+    display: none;
+  }
+}
 @media screen and (max-width: 768px) {
   .menu {
     display: none;
   }
 
+  .hero h1 {
+    width: 100%;
+  }
+
+  .hero p {
+    width: 100%;
+  }
+
+  .feature {
+    flex-direction: column;
+  }
+
+  .feature-item {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .feature-image {
+    width: 100% !important;
+    height: 100% !important;
+  }
+
+  .feature-content {
+    width: 100% !important;
+    margin: 20px 0px;
+    padding: 0px !important;
+  }
+
+  .feature-wrapper .feature:nth-child(1) .feature-content h1 {
+    font-size: 21px;
+    margin-bottom: 20px !important;
+    letter-spacing: 2px;
+  }
+
+  .feature-wrapper .feature:nth-child(1) .feature-content .feature-description {
+    font-size: 15px;
+    width: 100%;
+    text-align: justify;
+  }
+
+  .feature-wrapper .feature:nth-child(2) .feature-content {
+    order: 2;
+  }
+
+  .feature-wrapper .feature:nth-child(1) .feature-content,
+  .feature-wrapper .feature:nth-child(2) .feature-content {
+    padding: 12px !important;
+  }
+
   .media-social-icon {
     justify-content: center !important;
+  }
+  .feature-wrapper .feature:nth-child(2) .feature-content h1 {
+    font-size: 21px;
+    margin-bottom: 20px !important;
+    letter-spacing: 2px;
+  }
+  .feature-wrapper .feature:nth-child(1) .feature-content p.sub-heading,
+  .feature-wrapper .feature:nth-child(2) .feature-content p.sub-heading {
+    font-size: 15px !important;
+    width: 100%;
+    text-align: justify;
+  }
+
+  .contact-us {
+    background-position: -120px;
+    height: 300px;
+  }
+
+  .contact-us h1 {
+    font-size: 16px;
+    letter-spacing: 0px;
+    width: 100%;
+  }
+
+  .contact-us p {
+    width: 100%;
+    font-size: 12px !important;
+  }
+
+  .btn-contact-us {
+    letter-spacing: 0px;
+    font-size: 12px;
+    color: #fff;
+    background-color: #1487af;
+    transition: 0.3s ease;
+  }
+
+  .feature-icon {
+    margin: 10px 0px !important;
+  }
+
+  .maps-image {
+    height: 200px;
+    object-fit: cover;
+  }
+
+  .footer-title {
+    text-align: center;
+  }
+
+  /* about */
+  .about-content h2 {
+    font-size: 21px;
+    letter-spacing: 1px;
+  }
+
+  .about-content .sub-heading {
+    font-size: 15px !important;
   }
 }
