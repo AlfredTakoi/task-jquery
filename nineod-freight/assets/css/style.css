@@ -66,37 +66,82 @@ header {
   background-repeat: no-repeat;
 }
 .feature-three-image {
-  background-image: url("./../../img/trucking.jpg");
+  background-image: url("./../../img/special.jpg");
   background-size: cover;
   background-position: center;
   /* background-attachment: fixed; */
   background-repeat: no-repeat;
 }
 
-.feature-two-content,
-.feature-three-content {
+.feature-two-content {
   margin-top: 7em;
+  margin-bottom: 10em !important;
 }
 
-.feature-three-content {
-    padding-left: 100px;
-    padding-right: 50px;
-}
-.feature-two-content h1
- {
+.feature-two-content h1,
+.feature-three-content h1 {
   letter-spacing: 4px;
-}
-
-.feature-three-content h1{
-    letter-spacing: 2px;
 }
 
 .feature-two-content p {
   width: 85%;
 }
 
+.feature-three-content {
+  padding-left: 70px;
+  padding-right: 50px;
+  padding-top: 4em;
+  padding-bottom: 3em;
+}
+
+.feature-three-icon {
+  width: 16%;
+}
+
+.contact-us{
+  height: 87vh;
+  width: 100%;
+  background-image: url('./../../img/promotion.jpg');
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.contact-us h1,
+.contact-us p {
+  width: 80%;
+}
+
+.contact-us h1{
+  letter-spacing: 5px;
+}
+
+.btn-contact-us {
+  border: none;
+  outline: none;
+  letter-spacing: 1.5px;
+  font-size: 18px;
+  color: #fff;
+  background-color: #1487af;
+  transition: 0.3s ease;
+}
+
+.btn-contact-us:hover {
+  background-color: #fff;
+  color: black;
+}
+
+.img-footer {
+  width: 4%;
+}
+
+
 @media screen and (max-width: 768px) {
   .menu {
     display: none;
+  }
+
+  .media-social-icon {
+    justify-content: center !important;
   }
 }
