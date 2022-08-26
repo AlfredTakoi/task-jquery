@@ -23,17 +23,19 @@
 
 .change.bar3 {
   width: 35px;
-  -webkit-transform: rotate(45deg) translate(-8px, -8px) ;
-  transform: rotate(45deg) translate(-8px, -8px) ;
+  -webkit-transform: rotate(45deg) translate(-8px, -8px);
+  transform: rotate(45deg) translate(-8px, -8px);
 }
 
-.change.bar1{
+.change.bar1 {
   width: 35px;
-  -webkit-transform: rotate(-45deg) translate(-9px, 6px) ;
-  transform: rotate(-45deg) translate(-9px, 6px) ;
+  -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+  transform: rotate(-45deg) translate(-9px, 6px);
 }
 
-.bar1, .bar2, .bar3 {
+.bar1,
+.bar2,
+.bar3 {
   width: 35px;
   height: 5px;
   background-color: #1487af;
@@ -41,7 +43,8 @@
   transition: 0.4s;
 }
 
-.bar1, .bar3 {
+.bar1,
+.bar3 {
   width: 20px;
 }
 
@@ -292,7 +295,11 @@ header {
   }
 }
 @media screen and (max-width: 768px) {
-  .menu-toggle{
+  .nav-link {
+    color: red !important;
+  }
+
+  .menu-toggle {
     display: block;
   }
   .hero h1 {
