@@ -15,39 +15,42 @@
         class="navbar navbar-expand-lg navbar-dark py-3 shadow fixed-top navigation"
       >
         <div class="container">
-          <img src="./img/logo.svg" alt="logo" class="img-logo" />
+          <img src="./img/logo.svg" alt="logo" class="img-logo navbar-brand" />
           <img
             src="./img/NF-Black.svg"
             alt="logo"
             class="img-logo-black d-none"
           />
-          <button
-            class="navbar-toggler toggle"
-            type="button"
+          <div
+            class="menu-toggle toggle"
             data-bs-toggle="collapse"
             data-bs-target="#navbarText"
             aria-controls="navbarText"
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <ul class="navbar-nav mb-2 mb-lg-0 text-uppercase menu">
-            <li class="nav-item me-4 fs-6 fw-semibold">
-              <a class="nav-link link-nav active" aria-current="page" href="#"
-                >Home</a
-              >
-            </li>
-            <li class="nav-item me-4 fs-6 fw-semibold">
-              <a class="nav-link link-nav" href="about.html">about</a>
-            </li>
-            <li class="nav-item me-4 fs-6 fw-semibold">
-              <a class="nav-link link-nav" href="#">service</a>
-            </li>
-            <li class="nav-item fs-6 fw-semibold">
-              <a class="nav-link link-nav" href="#">contact</a>
-            </li>
-          </ul>
+            <div class="bar1 rounded"></div>
+            <div class="bar2 rounded"></div>
+            <div class="bar3 rounded float-end m-0"></div>
+          </div>
+          <div class="collapse navbar-collapse menu-wrapper" id="navbarText">
+            <ul class="navbar-nav mb-2 mb-lg-0 text-uppercase">
+              <li class="nav-item me-4 fs-6 fw-semibold">
+                <a class="nav-link link-nav active" aria-current="page" href="/"
+                  >Home</a
+                >
+              </li>
+              <li class="nav-item me-4 fs-6 fw-semibold">
+                <a class="nav-link link-nav" href="about.html">about</a>
+              </li>
+              <li class="nav-item me-4 fs-6 fw-semibold">
+                <a class="nav-link link-nav" href="service.html">service</a>
+              </li>
+              <li class="nav-item fs-6 fw-semibold">
+                <a class="nav-link link-nav" href="contact.html">contact</a>
+              </li>
+            </ul>
+          </div>
         </div>
       </nav>
 
@@ -71,7 +74,7 @@
 
     <section class="excellence row gx-0">
       <div class="col-md-4">
-        <div class="feature-one-content text-center p-5">
+        <div class="excellence-content text-center p-5">
           <img
             src="./img/consult-talk.svg"
             alt="expert-staff-icon"
@@ -86,7 +89,7 @@
       </div>
       <div class="col-md-4">
         <div
-          class="feature-one-content background-secondary-thin text-center p-5"
+          class="excellence-content background-secondary-thin text-center p-5"
         >
           <img
             src="./img/delivery.svg"
@@ -103,7 +106,7 @@
         </div>
       </div>
       <div class="col-md-4">
-        <div class="feature-one-content text-center p-5">
+        <div class="excellence-content text-center p-5">
           <img
             src="./img/lorry.svg"
             alt="expert-staff-icon"
@@ -158,10 +161,12 @@
               class="feature-icon me-4"
             />
             <div class="w-100">
-              <p class="fs-4 text-uppercase fw-semibold m-0 mb-2 w-100">
+              <p
+                class="fs-4 text-uppercase fw-semibold m-0 mb-2 w-100 feature-text"
+              >
                 100% satisfied customers
               </p>
-              <p class="w-100">
+              <p class="w-100 fw-light feature-desc">
                 Our customers are the luckiest people in the entire world,
                 getting their mail safe and in time.
               </p>
@@ -174,10 +179,12 @@
               class="feature-icon me-4"
             />
             <div class="w-100">
-              <p class="fs-4 text-uppercase fw-semibold m-0 w-100 mb-2">
+              <p
+                class="fs-4 text-uppercase fw-semibold m-0 w-100 mb-2 feature-text"
+              >
                 quality service affordable price
               </p>
-              <p class="w-100">
+              <p class="w-100 fw-light feature-desc">
                 Our customers are the luckiest people in the entire world,
                 getting their mail safe and in time.
               </p>
@@ -190,10 +197,12 @@
               class="feature-icon me-4"
             />
             <div class="w-100">
-              <p class="fs-4 text-uppercase fw-semibold m-0 w-100 mb-2">
+              <p
+                class="fs-4 text-uppercase fw-semibold m-0 w-100 mb-2 feature-text"
+              >
                 quality service affordable price
               </p>
-              <p class="w-100">
+              <p class="w-100 fw-light feature-desc">
                 Our customers are the luckiest people in the entire world,
                 getting their mail safe and in time.
               </p>
@@ -267,6 +276,7 @@
     </footer>
 
     <script src="./assets/js/jquery.js"></script>
+    <script src="./assets/js/bootstrap.min.js"></script>
     <script>
       $(document).ready(function () {
         $(window).scroll(function () {
@@ -281,6 +291,15 @@
           );
           $(".img-logo-black").toggleClass("d-none", $(this).scrollTop() < 100);
           $(".img-logo").toggleClass("d-none", $(this).scrollTop() > 100);
+        });
+        $(".toggle").click(function () {
+          $(".navigation").toggleClass("bg-white");
+          $(".navigation").toggleClass("navbar-dark");
+          $(".img-logo-black").toggleClass("d-none");
+          $(".img-logo").toggleClass("d-none");
+          $('.bar2').toggleClass('change')
+          $('.bar1').toggleClass('change')
+          $('.bar3').toggleClass('change')
         });
       });
     </script>
