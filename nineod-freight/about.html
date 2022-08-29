@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
     <link rel="stylesheet" href="./assets/fa5/css/all.css" />
     <link rel="stylesheet" href="./assets/css/style.css" />
+    <link href="./assets/css/aos.css" rel="stylesheet" />
     <title>ABOUT | Nineodfreight</title>
   </head>
   <body>
@@ -15,7 +16,13 @@
         class="navbar navbar-expand-lg navbar-dark py-3 shadow fixed-top navigation"
       >
         <div class="container">
-          <img src="./img/logo.svg" alt="logo" class="img-logo navbar-brand" />
+          <img
+            src="./img/logo.svg"
+            alt="logo"
+            class="img-logo navbar-brand p-0"
+            data-aos="fade-right"
+            data-aos-duration="1000"
+          />
           <img
             src="./img/NF-Black.svg"
             alt="logo"
@@ -33,10 +40,15 @@
             <div class="bar2 rounded"></div>
             <div class="bar3 rounded float-end m-0"></div>
           </div>
-          <div class="collapse navbar-collapse menu-wrapper" id="navbarText">
+          <div
+            class="collapse navbar-collapse menu-wrapper"
+            id="navbarText"
+            data-aos="fade-left"
+            data-aos-duration="1000"
+          >
             <ul class="navbar-nav mb-2 mb-lg-0 text-uppercase">
               <li class="nav-item me-4 fs-6 fw-semibold">
-                <a class="nav-link link-nav " aria-current="page" href="/"
+                <a class="nav-link link-nav" aria-current="page" href="/"
                   >Home</a
                 >
               </li>
@@ -141,6 +153,10 @@
       </div>
     </footer>
 
+    <script src="./assets/js/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
     <script src="./assets/js/jquery.js"></script>
     <script src="./assets/js/bootstrap.min.js"></script>
     <script>
@@ -163,9 +179,9 @@
           $(".navigation").toggleClass("navbar-dark");
           $(".img-logo-black").toggleClass("d-none");
           $(".img-logo").toggleClass("d-none");
-          $('.bar2').toggleClass('change')
-          $('.bar1').toggleClass('change')
-          $('.bar3').toggleClass('change')
+          $(".bar2").toggleClass("change");
+          $(".bar1").toggleClass("change");
+          $(".bar3").toggleClass("change");
         });
       });
     </script>

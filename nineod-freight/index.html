@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
     <link rel="stylesheet" href="./assets/fa5/css/all.css" />
     <link rel="stylesheet" href="./assets/css/style.css" />
+    <link href="./assets/css/aos.css" rel="stylesheet" />
     <title>HOME | Nineodfreight</title>
   </head>
   <body>
@@ -15,7 +16,13 @@
         class="navbar navbar-expand-lg navbar-dark py-3 shadow fixed-top navigation"
       >
         <div class="container">
-          <img src="./img/logo.svg" alt="logo" class="img-logo navbar-brand" />
+          <img
+            src="./img/logo.svg"
+            alt="logo"
+            class="img-logo navbar-brand p-0"
+            data-aos="fade-right"
+            data-aos-duration="1000"
+          />
           <img
             src="./img/NF-Black.svg"
             alt="logo"
@@ -33,7 +40,12 @@
             <div class="bar2 rounded"></div>
             <div class="bar3 rounded float-end m-0"></div>
           </div>
-          <div class="collapse navbar-collapse menu-wrapper" id="navbarText">
+          <div
+            class="collapse navbar-collapse menu-wrapper"
+            id="navbarText"
+            data-aos="fade-left"
+            data-aos-duration="1000"
+          >
             <ul class="navbar-nav mb-2 mb-lg-0 text-uppercase">
               <li class="nav-item me-4 fs-6 fw-semibold">
                 <a class="nav-link link-nav active" aria-current="page" href="/"
@@ -55,7 +67,7 @@
       </nav>
 
       <section class="hero text-light vh-100 d-flex align-items-center">
-        <div class="container lh-2">
+        <div class="container lh-2" data-aos="fade-in" data-aos-duration="2000">
           <h1 class="fw-bold">YOUR NAVIGATOR</h1>
           <h1 class="fw-bold">IN THE TRADE WORLD</h1>
           <p class="fw-light fs-5">
@@ -72,7 +84,11 @@
       </section>
     </header>
 
-    <section class="excellence row gx-0">
+    <section
+      class="excellence row gx-0"
+      data-aos="fade-up"
+      data-aos-duration="1000"
+    >
       <div class="col-md-4">
         <div class="excellence-content text-center p-5">
           <img
@@ -133,12 +149,26 @@
           />
         </div>
         <div class="feature-content h-100 w-50 ps-4">
-          <h1 class="text-uppercase fw-bold">Trucking and Freight Transport</h1>
-          <p class="fs-5 sub-heading">
+          <h1
+            class="text-uppercase fw-bold coba"
+            data-aos="fade-right"
+            data-aos-duration="1000"
+          >
+            Trucking and Freight Transport
+          </h1>
+          <p
+            class="fs-5 sub-heading"
+            data-aos="fade-right"
+            data-aos-duration="1200"
+          >
             The world is changing all around us. To continue to thrive as a
             business over the next ten years and beyond.
           </p>
-          <p class="feature-description">
+          <p
+            class="feature-description"
+            data-aos="fade-right"
+            data-aos-duration="1400"
+          >
             Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
             nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
             erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
@@ -152,9 +182,15 @@
 
       <section class="feature d-flex">
         <div class="feature-content w-50 h-100 m-0 p-5">
-          <p class="fs-5 text-uppercase m-0 sub-heading">why choose us</p>
-          <h1 class="text-uppercase fw-bold mb-5">Our Special Features</h1>
-          <div class="d-flex feature-item mb-5">
+          <div data-aos="fade-right" data-aos-duration="1000">
+            <p class="fs-5 text-uppercase m-0 sub-heading">why choose us</p>
+            <h1 class="text-uppercase fw-bold mb-5">Our Special Features</h1>
+          </div>
+          <div
+            class="d-flex feature-item mb-5"
+            data-aos="fade-right"
+            data-aos-duration="1000"
+          >
             <img
               src="./img/smile.svg"
               alt="smile-icon"
@@ -172,7 +208,7 @@
               </p>
             </div>
           </div>
-          <div class="d-flex feature-item mb-5">
+          <div class="d-flex feature-item mb-5" data-aos="fade-right" data-aos-duration="1200">
             <img
               src="./img/medal.svg"
               alt="smile-icon"
@@ -190,7 +226,7 @@
               </p>
             </div>
           </div>
-          <div class="d-flex feature-item">
+          <div class="d-flex feature-item" data-aos="fade-right" data-aos-duration="1000">
             <img
               src="./img/planet-earth.svg"
               alt="smile-icon"
@@ -215,8 +251,8 @@
       </section>
     </div>
 
-    <section class="contact-us text-light d-flex align-items-center">
-      <div class="container lh-2">
+    <section class="contact-us text-light d-flex align-items-center" >
+      <div class="container lh-2" data-aos="fade-up" data-aos-duration="1000">
         <h1 class="fw-bold text-uppercase">
           let us help you find a solution that meets your needs
         </h1>
@@ -275,6 +311,10 @@
       </div>
     </footer>
 
+    <script src="./assets/js/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
     <script src="./assets/js/jquery.js"></script>
     <script src="./assets/js/bootstrap.min.js"></script>
     <script>
@@ -285,21 +325,22 @@
           } else {
             $(".navigation").css("background", "transparent");
           }
-          // $(".navigation").toggleClass(
-          //   "navbar-dark",
-          //   $(this).scrollTop() < 100
-          // );
+          $(".navigation").toggleClass(
+            "navbar-dark",
+            $(this).scrollTop() < 100
+          );
           $(".img-logo-black").toggleClass("d-none", $(this).scrollTop() < 100);
           $(".img-logo").toggleClass("d-none", $(this).scrollTop() > 100);
         });
-        $(".toggle").click(function () {
+        $(".menu-toggle").click(function () {
           $(".navigation").toggleClass("bg-white");
-          //   $(".navigation").toggleClass("navbar-dark");
-            $(".img-logo-black").toggleClass("d-none");
-            $(".img-logo").toggleClass("d-none");
-            $('.bar2').toggleClass('change')
-            $('.bar1').toggleClass('change')
-            $('.bar3').toggleClass('change')
+
+          $(".img-logo-black").toggleClass("d-none");
+          $(".img-logo").toggleClass("d-none");
+
+          $(".bar2").toggleClass("change");
+          $(".bar1").toggleClass("change");
+          $(".bar3").toggleClass("change");
         });
       });
     </script>
